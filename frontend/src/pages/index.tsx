@@ -1,13 +1,16 @@
 import React from 'react';
 
 import { Header } from '../components/common';
-import { Main, Courses } from '../components/Landing';
+import { Main, Courses, AboutSchool, Question, Footer } from '../components/Landing';
 
 const HomePage = () => (
     <>
         <Header />
         <Main />
         <Courses />
+        <AboutSchool />
+        <Question />
+        <Footer />
     </>
 );
 

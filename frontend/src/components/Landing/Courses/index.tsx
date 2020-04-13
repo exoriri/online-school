@@ -26,9 +26,9 @@ const StyledH1 = styled(H1)`
 `;
 
 const Container = styled(Box)`
-    max-width: 980px;
+    max-width: 1024px;
     margin: 0 auto;
-    padding: 28px;
+    padding: 28px 20px;
 `;
 
 const Wrapper = styled(Box)`
@@ -37,7 +37,7 @@ const Wrapper = styled(Box)`
 `;
 
 export const Courses = () => (
-    <Container>
+    <Container id="courses">
         <Wrapper>
             <StyledH1 bold>Наши курсы</StyledH1>
             <CoursesList courses={courses} />

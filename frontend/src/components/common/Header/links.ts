@@ -12,6 +12,6 @@ export const links = [
     {
         id: 3,
         title: 'Контакты',
-        href: '#contacts'
+        href: '#question'
     }
 ];
