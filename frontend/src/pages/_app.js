@@ -1,6 +1,7 @@
 // import App from 'next/app'
 
 import 'reset-css';
+import './index.css';
 
 function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />
