@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "next": "^9.3.4",
+    "now": "^17.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reset-css": "^5.0.1",
@@ -19,7 +20,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now"
   },
   "repository": {
     "type": "git",
