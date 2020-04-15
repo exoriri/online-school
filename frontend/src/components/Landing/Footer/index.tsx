@@ -14,11 +14,7 @@ const Container = styled.footer`
 
 const List = styled.ul`
     display: flex;
-`;
-
-const StyledImage = styled(Image)`
-    width: 50px;
-    height: 50px;
+    align-items: center;
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -28,21 +24,15 @@ const StyledParagraph = styled(Paragraph)`
 export const Footer = () => (
     <Container>
         <List>
-            <li>
-                <Link>
-                    <StyledImage src={'/social-images/vk.svg'} />
-                </Link>
-            </li>
-            <li>
-                <Link>
-                    <StyledImage src={'/social-images/instagram.svg'} />
-                </Link>
-            </li>
-            <li>
-                <Link>
-                    <StyledImage src={'/social-images/youtube.svg'} />
-                </Link>
-            </li>
+            <Link>
+                <Image src={'/social-images/vk.svg'} />
+            </Link>
+            <Link>
+                <Image width={49} height={50} src={'/social-images/instagram.svg'} />
+            </Link>
+            <Link>
+                <Image width={49} height={40} src={'/social-images/youtube.svg'} />
+            </Link>
         </List>
         <StyledParagraph>
             ИП Лаврик Роман

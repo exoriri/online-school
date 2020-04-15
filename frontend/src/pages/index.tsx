@@ -26,7 +26,7 @@ const HomePage = () => {
     const [isShow, setShow] = useState(false);
     
     return <Wrapper isShow={isShow}>
-        <MobileHeader isShow={isShow} />
+        <MobileHeader setShow={setShow} isShow={isShow} />
         <Content isShow={isShow}>
             <Header isShow={isShow} setShow={setShow} />
             <Main />

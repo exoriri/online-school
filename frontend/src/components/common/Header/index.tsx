@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, Link, Image, Button } from '../';
+import { Box, Link, Image, Button, H1 } from '../';
 import { LinksListDesktop, LinksListMobile } from './LinksList';
 
 import { links } from './links';
@@ -38,11 +38,10 @@ const Wrapper = styled(Box)`
     align-items: center;
 `;
 
-const StyledH1 = styled.h1`
-    font-family: 'Roboto-Bold';
-    font-weight: bold;
+const StyledH1 = styled(H1)`
     font-size: 36px;
     padding-left: 20px;
+    align-self: center;
 
     @media screen and (min-width: 1024px) {
         padding-left: 0;
@@ -53,7 +52,7 @@ const LeftDesktop = styled(Box)`
     display: none;
 
     a {
-        margin-right: 7px;
+        margin-right: 5px;
     }
 
     @media screen and (min-width: 1024px) {
@@ -63,10 +62,19 @@ const LeftDesktop = styled(Box)`
     }
 `;
 
-const HamburgerButton = styled.button`
+const IconButton = styled(Button)`
+    align-self: center;
+
     @media screen and (min-width: 1024px) {
         display: none;
     }
+`;
+
+const CloseBtn = styled(IconButton)`
+    position: relative;
+    bottom: 15px;
+    right: 5px;
+    margin-bottom: 30px;
 `;
 
 export const Header = ({ setShow, isShow }) => {
@@ -78,24 +86,27 @@ export const Header = ({ setShow, isShow }) => {
                         <Image src={'/social-images/vk.svg'} />
                     </Link>
                     <Link>
-                        <Image src={'/social-images/instagram.svg'} />
+                        <Image width={49} height={50} src={'/social-images/instagram.svg'} />
                     </Link>
                     <Link>
-                        <Image src={'/social-images/youtube.svg'} />
+                        <Image width={53} height={50} src={'/social-images/youtube.svg'} />
                     </Link>
                 </LeftDesktop>
-                <HamburgerButton onClick={() => setShow(!isShow)}>
+                <IconButton onClick={() => setShow(!isShow)}>
                     <Image src={'/hamburger.svg'} />
-                </HamburgerButton>
-                <StyledH1>SNG</StyledH1>
+                </IconButton>
+                <StyledH1 bold>SNG</StyledH1>
                 <LinksListDesktop links={links} />
             </Wrapper>
         </StyledHeader>
     );
 };
 
-export const MobileHeader = ({ isShow }) => (
+export const MobileHeader = ({ setShow, isShow }) => (
     <StyledMobileHeader isShow={isShow}>
+        <CloseBtn onClick={() => setShow(false)}>
+            <Image width={30} height={30} src={'/close.svg'} />
+        </CloseBtn>
         <LinksListMobile links={links} />
     </StyledMobileHeader>
 );
