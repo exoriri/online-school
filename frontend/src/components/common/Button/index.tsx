@@ -8,8 +8,8 @@ const StyledButton = styled.button`
     cursor: pointer;
 `;
 
-export const Button = ({ children, className="" }) => (
-    <StyledButton className={className}>
+export const Button = ({ children, className="", onClick }) => (
+    <StyledButton onClick={onClick} className={className}>
         {children}
     </StyledButton>
 );

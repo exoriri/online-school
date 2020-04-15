@@ -53,11 +53,12 @@ export const Advertisement = ({ isReversed = false }) => (
     <Container isReversed={isReversed}>
         <VideoBox>
             <iframe 
-                 width="100%" 
-                 height="100%" 
-                 src="https://www.youtube.com/embed/z97MvXxHXgY"
-                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            ></iframe>
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/z97MvXxHXgY" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
         </VideoBox>
         <TextBlock>
             <StyledH1 bold>Sng</StyledH1>

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, Link, Image } from '../';
+import { Box, Link, Image, Button } from '../';
+import { LinksListDesktop, LinksListMobile } from './LinksList';
 
 import { links } from './links';
 
@@ -10,14 +11,30 @@ const StyledHeader = styled.header`
     padding: 10px 0px;
     width: 100%;
     background: #fff;
-    z-index: 9999;
+    z-index: 999;
+    display: block;
+`;
+
+const StyledMobileHeader = styled(Box)`
+    position: fixed;
+    background: #fff;
+    transition: left .4s;
+    left: ${props => props.isShow ? '0' : '-170px'};
+    animation-iteration-count: 1;
+    height: 100vh;
+    padding: 30px;
+    background: grey;
+
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
 `;
 
 const Wrapper = styled(Box)`
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    padding: 0 20px;
+    padding: 0px 20px;
     align-items: center;
 `;
 
@@ -25,6 +42,11 @@ const StyledH1 = styled.h1`
     font-family: 'Roboto-Bold';
     font-weight: bold;
     font-size: 36px;
+    padding-left: 20px;
+
+    @media screen and (min-width: 1024px) {
+        padding-left: 0;
+    }
 `;
 
 const LeftDesktop = styled(Box)`
@@ -41,37 +63,19 @@ const LeftDesktop = styled(Box)`
     }
 `;
 
-const RightList = styled.ul`
-    display: none;
-
-    li {
-        padding-right: 17px;
-
-        &:last-child {
-            padding-right: 0;
-        }
-    }
-
+const HamburgerButton = styled.button`
     @media screen and (min-width: 1024px) {
-        display: flex;
-        justify-content: flex-end;
-        flex: 1;
+        display: none;
     }
 `;
 
-const StyledListLink = styled(Link)`
-    font-family: 'Roboto-Regular';
-    font-size: 20px;
-    text-transform: uppercase;
-`;
-
-export const Header = () => {
+export const Header = ({ setShow, isShow }) => {
     return (
         <StyledHeader>
-            <Wrapper>
+            <Wrapper isShow={isShow}>
                 <LeftDesktop>
                     <Link>
-                       <Image src={'/social-images/vk.svg'} />
+                        <Image src={'/social-images/vk.svg'} />
                     </Link>
                     <Link>
                         <Image src={'/social-images/instagram.svg'} />
@@ -80,15 +84,18 @@ export const Header = () => {
                         <Image src={'/social-images/youtube.svg'} />
                     </Link>
                 </LeftDesktop>
+                <HamburgerButton onClick={() => setShow(!isShow)}>
+                    <Image src={'/hamburger.svg'} />
+                </HamburgerButton>
                 <StyledH1>SNG</StyledH1>
-                <RightList>
-                    { links.map(link => (
-                        <li key={link.id} role="button">
-                            <StyledListLink href={link.href}>{link.title}</StyledListLink>
-                        </li>
-                    )) }
-                </RightList>
+                <LinksListDesktop links={links} />
             </Wrapper>
         </StyledHeader>
     );
 };
+
+export const MobileHeader = ({ isShow }) => (
+    <StyledMobileHeader isShow={isShow}>
+        <LinksListMobile links={links} />
+    </StyledMobileHeader>
+);

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-interface IBox {
+export interface Props {
     id?: string;
-    children: any;
-    className: string;
+    children: JSX.Element[];
+    className?: string;
 }
 
-export const Box = ({ children, className="", ...rest }): React.FunctionComponentElement<IBox> => (
-    <div {...rest} className={className}>
+export const Box: FunctionComponent<Props> = ({ children, className, id }) => (
+    <div id={id} className={className}>
         {children}
     </div>
 );

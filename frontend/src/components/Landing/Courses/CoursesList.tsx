@@ -21,6 +21,7 @@ const List = styled.ul`
     }
 
     @media screen and (min-width: 700px) {
+        justify-content: center;
         li {
             margin: 0 20px;
         }
