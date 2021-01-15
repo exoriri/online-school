@@ -1,33 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Box, Link, Image, Button, H1 } from '../';
-import { LinksListDesktop, LinksListMobile } from './LinksList';
+import { Box, Link, H1, ModalForm } from '../';
 
 import { links } from './links';
+import { List, Button } from 'semantic-ui-react';
 
-const StyledHeader = styled.header`
-    position: fixed;
-    padding: 10px 0px;
-    width: 100%;
-    background: #fff;
-    z-index: 999;
-    display: block;
+
+const Image = styled.img`
+    width: ${props => props.width};
+    heigth: ${props => props.height};
 `;
 
-const StyledMobileHeader = styled(Box)`
-    position: fixed;
-    background: #fff;
-    transition: left .4s;
-    left: ${props => props.isShow ? '0' : '-170px'};
-    animation-iteration-count: 1;
-    height: 100vh;
-    padding: 30px;
-    background: grey;
+const StyledHeader = styled.header`
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 10px 20px 10px;
 
-    @media screen and (min-width: 1024px) {
-        display: none;
+    @media screen and (max-width: 400px) {
+        padding: 10px 0px 20px 0px;
+        justify-content: center;
     }
+`;
+
+const HeaderLinks = styled(List)`
+    margin: 15px 0 0 auto !important;
+    @media screen and (max-width: 400px) {
+        margin-left: 0 !important;
+    }
+`;
+
+const ListItem = styled(List.Item)`
+    font-size: 15px;
+    color: rgba(255,255,255,.5);
+    margin-right: 5px;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0 !important;
+    }
+`;
+
+const StyledButton = styled(Button)`
+    margin: 0 !important;
 `;
 
 const Wrapper = styled(Box)`
@@ -78,34 +94,26 @@ const CloseBtn = styled(IconButton)`
 `;
 
 export const Header = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const onRequestBtnClick = () => {
+        setModalOpen(!isModalOpen);
+    };
+
     return (
-        <StyledHeader>
-            <Wrapper>
-                <LeftDesktop>
-                    <Link>
-                        <Image src={'/social-images/vk.svg'} />
-                    </Link>
-                    <Link>
-                        <Image width={49} height={50} src={'/social-images/instagram.svg'} />
-                    </Link>
-                    <Link>
-                        <Image width={53} height={50} src={'/social-images/youtube.svg'} />
-                    </Link>
-                </LeftDesktop>
-                <IconButton>
-                    <Image src={'/hamburger.svg'} />
-                </IconButton>
-                <LinksListDesktop links={links} />
-            </Wrapper>
-        </StyledHeader>
+        <>
+            <StyledHeader>
+                <Image width={120} heigth={120} src={"logo.png"} alt="logo" />
+                <HeaderLinks inverted horizontal link>
+                    <ListItem as="a">О вебинаре</ListItem>
+                    <ListItem>
+                        <StyledButton onClick={onRequestBtnClick} primary>
+                            Оставить заявку
+                    </StyledButton>
+                    </ListItem>
+                </HeaderLinks>
+            </StyledHeader>
+            <ModalForm onClose={() => setModalOpen(false)} open={isModalOpen} setOpen={setModalOpen} />
+        </>
     );
 };
-
-export const MobileHeader = ({ setShow, isShow }) => (
-    <StyledMobileHeader isShow={isShow}>
-        <CloseBtn onClick={() => setShow(false)}>
-            <Image width={30} height={30} src={'/close.svg'} />
-        </CloseBtn>
-        <LinksListMobile links={links} />
-    </StyledMobileHeader>
-);

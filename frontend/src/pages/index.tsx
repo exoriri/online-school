@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Header, MobileHeader, Box } from '../components/common';
-import { Main, Courses, AboutSchool, Question, Footer } from '../components/Landing';
+import { Header, Box } from '../components/common';
+import { AboutWebinar, Video } from '../components/Webinar';
 
-const Wrapper = styled(Box)`
-    position: relative;
-    display: flex;
+ const Wrapper = styled(Box)`
+    height: 100vh;
+    background-color: #000000;
+background-image: linear-gradient(147deg, #000000 0%, #2c3e50 100%);
     overflow: ${props => props.isShow ? 'hidden' : 'auto'};
 `;
 
@@ -24,16 +25,11 @@ const Content = styled(Box)`
 
 const HomePage = () => {
     const [isShow, setShow] = useState(false);
-    
+
     return <Wrapper isShow={isShow}>
-        <Content>
-            <Header />
-            {/* <Main />
-            <Courses />
-            <AboutSchool />
-            <Question />
-            <Footer /> */}
-        </Content>
+        <Header />
+        <Video />
+        <AboutWebinar />
     </Wrapper>
 };
 
