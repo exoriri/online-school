@@ -77,10 +77,10 @@ const CloseBtn = styled(IconButton)`
     margin-bottom: 30px;
 `;
 
-export const Header = ({ setShow, isShow }) => {
+export const Header = () => {
     return (
         <StyledHeader>
-            <Wrapper isShow={isShow}>
+            <Wrapper>
                 <LeftDesktop>
                     <Link>
                         <Image src={'/social-images/vk.svg'} />
@@ -92,10 +92,9 @@ export const Header = ({ setShow, isShow }) => {
                         <Image width={53} height={50} src={'/social-images/youtube.svg'} />
                     </Link>
                 </LeftDesktop>
-                <IconButton onClick={() => setShow(!isShow)}>
+                <IconButton>
                     <Image src={'/hamburger.svg'} />
                 </IconButton>
-                <StyledH1 bold>SNG</StyledH1>
                 <LinksListDesktop links={links} />
             </Wrapper>
         </StyledHeader>
