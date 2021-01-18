@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Box } from '../';
 import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react'
 
 const StyledModal = styled(Modal)`
@@ -12,6 +13,15 @@ const StyledModal = styled(Modal)`
   }
 `;
 
+const Actions = styled(Box)`
+  text-align: center;
+  padding-bottom: 1.25rem;
+`;
+
+const RightButton = styled(Button)`
+  margin-left: 10px !important;
+`;
+
 export const ModalForm = ({ open, setOpen, onClose }) => {
   return (
     <StyledModal
@@ -19,7 +29,7 @@ export const ModalForm = ({ open, setOpen, onClose }) => {
       open={open}
       onClose={onClose}
     >
-      <Header icon='envelope' content='Оставите свои контактные данные и мы с вами свяжемся &#x1f60a;' />
+      <Header content='Оставите свои контактные данные и мы с вами свяжемся &#x1f60a;' />
       <Modal.Content>
         <Form>
           <Form.Field>
@@ -27,19 +37,19 @@ export const ModalForm = ({ open, setOpen, onClose }) => {
             <input placeholder='ФИО' />
           </Form.Field>
           <Form.Field>
-            <label>Ваш номер телефона или телеграмм аккаунт</label>
+            <label>Ваш номер телефона или телеграм аккаунт</label>
             <input placeholder='Номер телефона' />
           </Form.Field>
         </Form>
       </Modal.Content>
-      <Modal.Actions>
-        <Button  onClick={() => setOpen(false)}>
-          <Icon name='cancel' /> Отменить
+      <Actions>
+        <Button onClick={() => setOpen(false)}>
+          Отменить
           </Button>
-        <Button primary onClick={() => setOpen(false)}>
+        <RightButton primary onClick={() => setOpen(false)}>
            Отправить
-        </Button>
-      </Modal.Actions>
+        </RightButton>
+      </Actions>
     </StyledModal>
   )
 }

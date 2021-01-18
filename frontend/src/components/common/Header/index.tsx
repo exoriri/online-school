@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Box, Link, H1, ModalForm } from '../';
+import { ModalForm } from '../';
 
-import { links } from './links';
-import { List, Button } from 'semantic-ui-react';
+import { List, Button, Icon } from 'semantic-ui-react';
 
 
 const Image = styled.img`
@@ -16,81 +15,55 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10px 10px 20px 10px;
-
-    @media screen and (max-width: 400px) {
-        padding: 10px 0px 20px 0px;
-        justify-content: center;
-    }
+    padding-top: 10px;
 `;
 
 const HeaderLinks = styled(List)`
     margin: 15px 0 0 auto !important;
-    @media screen and (max-width: 400px) {
+    display: none !important;
+
+    @media screen and (min-width: 1024px) {
         margin-left: 0 !important;
     }
 `;
 
 const ListItem = styled(List.Item)`
     font-size: 15px;
-    color: rgba(255,255,255,.5);
-    margin-right: 5px;
+    color: #e1e2e6;
+    margin-right: 15px;
     cursor: pointer;
+    font-size: 16px !important;
 
     &:last-child {
         margin-right: 0 !important;
+    }
+
+    &:hover {
+        color: #3963e6 !important;
     }
 `;
 
 const StyledButton = styled(Button)`
     margin: 0 !important;
-`;
+    color: #fff !important;
+    background: #1c439c !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
 
-const Wrapper = styled(Box)`
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    padding: 0px 20px;
-    align-items: center;
-`;
-
-const StyledH1 = styled(H1)`
-    font-size: 36px;
-    padding-left: 20px;
-    align-self: center;
-
-    @media screen and (min-width: 1024px) {
-        padding-left: 0;
+    &:hover {
+        background: #3963e6 !important;
     }
 `;
 
-const LeftDesktop = styled(Box)`
-    display: none;
-
-    a {
-        margin-right: 5px;
-    }
-
-    @media screen and (min-width: 1024px) {
-        display: flex;
-        align-items: center;
-        flex: 1;
-    }
+const HamburgerButton = styled(Button)`
+    background: none !important;
+    margin: 5px 0 0 auto !important;
+    padding: 0 !important;
 `;
 
-const IconButton = styled(Button)`
-    align-self: center;
-
-    @media screen and (min-width: 1024px) {
-        display: none;
-    }
-`;
-
-const CloseBtn = styled(IconButton)`
-    position: relative;
-    bottom: 15px;
-    right: 5px;
-    margin-bottom: 30px;
+const HamburgerIcon = styled(Icon)`
+    color: #fff;
+    margin: 5px 0 0 0 !important;
 `;
 
 export const Header = () => {
@@ -105,13 +78,17 @@ export const Header = () => {
             <StyledHeader>
                 <Image width={120} heigth={120} src={"logo.png"} alt="logo" />
                 <HeaderLinks inverted horizontal link>
-                    <ListItem as="a">О вебинаре</ListItem>
+                    <ListItem as="a" href="#author">Об авторе</ListItem>
+                    <ListItem as="a" href="#webinar">О вебинаре</ListItem>
                     <ListItem>
-                        <StyledButton onClick={onRequestBtnClick} primary>
+                        <StyledButton primary onClick={onRequestBtnClick}>
                             Оставить заявку
-                    </StyledButton>
+                        </StyledButton>
                     </ListItem>
                 </HeaderLinks>
+                <HamburgerButton>
+                    <HamburgerIcon size="big" name="content" />
+                </HamburgerButton>
             </StyledHeader>
             <ModalForm onClose={() => setModalOpen(false)} open={isModalOpen} setOpen={setModalOpen} />
         </>

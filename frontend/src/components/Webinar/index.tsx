@@ -1,2 +1,2 @@
-export * from './AboutWebinar';
+export * from './AboutAuthor';
 export * from './Video';

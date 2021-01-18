@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 
 export interface Props {
     id?: string;
-    children: JSX.Element[];
     className?: string;
 }
 
