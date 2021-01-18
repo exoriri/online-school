@@ -1,2 +1,3 @@
 export * from './AboutAuthor';
-export * from './Video';
+export * from './ContactFormBtn';
+export * from './WebinarDescription';

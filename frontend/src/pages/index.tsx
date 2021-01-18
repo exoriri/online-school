@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Header, Box } from '../components/common';
-import { AboutAuthor, Video } from '../components/Webinar';
+import { WebinarDescription } from '../components/Webinar';
+
+import { webinarLinks } from '../components/common/Header/links';
 
 const Wrapper = styled(Box)`
     height: 100vh;
@@ -19,7 +21,7 @@ const HomePage = () => (
      <Wrapper>
         <Header />
         <Block>
-            <Video />
+            <WebinarDescription />
         </Block>
         {/* <Block id="author">
             <AboutAuthor />

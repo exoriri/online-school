@@ -15,3 +15,16 @@ export const links = [
         href: '#question'
     }
 ];
+
+export const webinarLinks = [
+    {
+        id: 1,
+        title: 'О вебинаре',
+        href: '#webinar'
+    },
+    {
+        id: 2,
+        title: 'Об авторе',
+        href: '#author'
+    }
+];
