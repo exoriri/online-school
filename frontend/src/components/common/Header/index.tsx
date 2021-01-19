@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 10px;
+    padding: 10px 10px 0 10px;
 `;
 
 const Link = styled(List.Item)`
@@ -93,7 +93,7 @@ const MobileLinks = styled.ul`
 
 const ListItem = styled.li`
     margin-bottom: 30px;
-
+    list-style-type: none;
     &:last-child {
         margin-bottom: 0;
     }
@@ -116,7 +116,7 @@ const ListItem = styled.li`
 export const Links = ({ onClick }) => (
     <>
         { webinarLinks.map(link => {
-            return <ListItem><Link as="a" onClick={onClick} href={link.href}>{link.title}</Link></ListItem>
+            return <ListItem key={link.id}><Link as="a" onClick={onClick} href={link.href}>{link.title}</Link></ListItem>
         })}
     </>
 );
@@ -132,8 +132,9 @@ export const Header = () => {
         <>
             <StyledHeader isMobileOpened={isMobileOpened}>
                 <a href="#">
-                    <Image width={120} height={120} src={"logo.png"} alt="logo" />
+                    <Image width={150} height={70} src={"logo.png"} alt="logo" />
                 </a>
+                <Image width={150} height={70} src={"logo.png"} alt="logo" />
                 <HeaderLinks inverted link>
                     <Links onClick={handleLinkClick}/>
                     <ContactBtnListItem />
