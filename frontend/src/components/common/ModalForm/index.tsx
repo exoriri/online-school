@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../';
 import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react'
@@ -23,6 +23,19 @@ const RightButton = styled(Button)`
 `;
 
 export const ModalForm = ({ open, setOpen, onClose }) => {
+  const [formValue, setFormValue] = useState({
+    name: '',
+    number: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormValue({ ...formValue, [name]: value });
+  }
+
+  console.log(formValue);
+
   return (
     <StyledModal
       closeIcon
@@ -34,11 +47,11 @@ export const ModalForm = ({ open, setOpen, onClose }) => {
         <Form>
           <Form.Field>
             <label>Ваше полное имя (ФИО)</label>
-            <input placeholder='ФИО' />
+            <input value={formValue.name} onChange={handleChange} name="name" placeholder='ФИО' />
           </Form.Field>
           <Form.Field>
             <label>Ваш номер телефона или телеграм аккаунт</label>
-            <input placeholder='Номер телефона' />
+            <input value={formValue.number} onChange={handleChange} name="number" placeholder='Номер телефона' />
           </Form.Field>
         </Form>
       </Modal.Content>

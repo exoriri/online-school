@@ -64,7 +64,7 @@ const BgImage = styled(Box)`
 
 const DescriptionContainer = styled(Box)`
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
@@ -104,7 +104,7 @@ const ListIcon = styled(Icon)`
 `;
 
 const FreeText = styled.span`
-    color: red;
+    color: #e65010;
     text-transform: uppercase;
 `;
 

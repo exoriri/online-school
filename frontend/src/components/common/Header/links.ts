@@ -26,5 +26,10 @@ export const webinarLinks = [
         id: 2,
         title: 'Об авторе',
         href: '#author'
+    },
+    {
+        id: 3,
+        title: 'Контакты',
+        href: '#contacts'
     }
 ];

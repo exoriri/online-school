@@ -21,6 +21,7 @@ const Description = styled(Box)`
 const WebinarWrapper = styled(Box)`
     display: flex;
     justify-content: center;
+    padding: 30px 0;
 `;
 
 const WebinarContent = styled(Box)`
@@ -49,7 +50,7 @@ const ImageMe = styled.img`
 
 export const AboutAuthor = () => {
     return (
-        <>
+        <Box id="author">
             <Cover text="Об авторе" />
             <WebinarWrapper>
                 <WebinarContent>
@@ -66,6 +67,6 @@ export const AboutAuthor = () => {
                     </Description>
                 </WebinarContent>
             </WebinarWrapper>
-        </>
+        </Box>
     );
 };
