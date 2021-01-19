@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, Paragraph } from '../../common';
 
+import { Cover } from '../';
+
 const StyledParagraph = styled(Paragraph)`
     color: #fff;
     font-size: 20px;
@@ -48,6 +50,7 @@ const ImageMe = styled.img`
 export const AboutAuthor = () => {
     return (
         <>
+            <Cover text="Об авторе" />
             <WebinarWrapper>
                 <WebinarContent>
                     <ImageMe src="me.jpg" alt="Roma" />

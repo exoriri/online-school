@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, H1, H2 } from '../../../components/common';
+import { Box, H1, H2, Paragraph } from '../../../components/common';
 import { List, Icon } from 'semantic-ui-react';
 
-import { ContactBtn } from '../';
+import { ContactBtn, Cover } from '../';
 
 const Wrapper = styled(Box)`
     position: relative;
     object-fit: cover !important;
-    padding: 20px 0;
+    padding: 20px 0 10px 0;
 `;
 
 const Description = styled(Box)`
@@ -41,23 +41,6 @@ const Text = styled(H2)`
 
     @media screen and (min-width: 1024px) {
         font-size: 26px;
-    }
-`;
-
-const Cover = styled(Box)`
-    background: #3e2b94;
-    font-weight: bold;
-    padding: 15px 0;
-`;
-
-const CoverTitle = styled(H1)`
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    font-size: 24px;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 30px;
     }
 `;
 
@@ -100,8 +83,8 @@ const FeaturesListItem = styled.li`
     font-size: 20px;
     padding: 0 10px 20px 10px;
 
-    &:last-child: {
-        margin-bottom: 0;
+    &:last-child {
+        padding: 0 10px 0 10px;
     }
 
     @media screen and (min-width:1024px) {
@@ -109,9 +92,20 @@ const FeaturesListItem = styled.li`
     }
 `;
 
+const СlarificationText = styled(Paragraph)`
+    color: #d6d6d6;
+    font-size: 18px;
+    margin-top: 7px;
+`;
+
 const ListIcon = styled(Icon)`
     margin-right: .76   em !important;
     color: #2dbd54;
+`;
+
+const FreeText = styled.span`
+    color: red;
+    text-transform: uppercase;
 `;
 
 export const WebinarDescription = () => (
@@ -123,18 +117,16 @@ export const WebinarDescription = () => (
                 <Text>Уверен, ты удивишься, когда узнаешь, что можно делать крутые вещи не выходя из дома или из своего номера на острове</Text>
             </Description>
         </DescriptionContainer>
-        <Cover>
-            <CoverTitle>Что ты узнаешь на вебинаре?</CoverTitle>
-        </Cover>
+        <Cover text="Что ты узнаешь о вебинаре?" />
         <FeaturesList>
             <List>
-                <FeaturesListItem icon='check' content='Semantic UI' />
                 <FeaturesListItem><ListIcon name="check" /><span>Какой язык программирования стоит учить?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Что такое веб?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Фриланс vs Найм</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Стоит ли вам брать курс?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>20% Скидки на первый курс | ступень новобранца</span></FeaturesListItem>
             </List>
+            <СlarificationText>* Кстати, вебинар полностью <FreeText>Бесплатный</FreeText></СlarificationText>
         </FeaturesList>
         <ApplicBtn>
             <ContactBtn />
