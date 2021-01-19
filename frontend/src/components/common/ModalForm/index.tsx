@@ -4,6 +4,7 @@ import { Box } from '../';
 import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react'
 
 const StyledModal = styled(Modal)`
+  z-index: 9999 !important;
   @media screen and (min-width: 768px) {
     width: 66% !important;
   }
@@ -19,23 +20,16 @@ const Actions = styled(Box)`
 `;
 
 const RightButton = styled(Button)`
-  margin-left: 10px !important;
+  color: #fff !important;
+  background: #1c439c !important;
+  font-weight: 500 !important;
+
+  &:hover {
+      background: #3963e6 !important;
+  }
 `;
 
-export const ModalForm = ({ open, setOpen, onClose }) => {
-  const [formValue, setFormValue] = useState({
-    name: '',
-    number: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormValue({ ...formValue, [name]: value });
-  }
-
-  console.log(formValue);
-
+export const ModalForm = ({ open, setOpen, onClose, number, name, handleChange, onSend }) => {
   return (
     <StyledModal
       closeIcon
@@ -47,11 +41,11 @@ export const ModalForm = ({ open, setOpen, onClose }) => {
         <Form>
           <Form.Field>
             <label>Ваше полное имя (ФИО)</label>
-            <input value={formValue.name} onChange={handleChange} name="name" placeholder='ФИО' />
+            <input required value={name} onChange={handleChange} name="name" placeholder='ФИО' />
           </Form.Field>
           <Form.Field>
             <label>Ваш номер телефона или телеграм аккаунт</label>
-            <input value={formValue.number} onChange={handleChange} name="number" placeholder='Номер телефона' />
+            <input required value={number} onChange={handleChange} name="number" placeholder='Номер или телеграм' />
           </Form.Field>
         </Form>
       </Modal.Content>
@@ -59,7 +53,7 @@ export const ModalForm = ({ open, setOpen, onClose }) => {
         <Button onClick={() => setOpen(false)}>
           Отменить
           </Button>
-        <RightButton primary onClick={() => setOpen(false)}>
+        <RightButton primary onClick={onSend}>
            Отправить
         </RightButton>
       </Actions>

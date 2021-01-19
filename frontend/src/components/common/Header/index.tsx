@@ -80,9 +80,9 @@ const ContactBtnListItem = styled(ContactBtn)`
 const MobileLinks = styled.ul`
     position: absolute;
     left: 50%;
-    top: 50px;
+    top: 35px;
     transform: translateX(-50%);
-    z-index: 9999;
+    z-index: 8888;
     display: flex;
     flex-direction: column;
 
@@ -99,7 +99,7 @@ const ListItem = styled.li`
     }
 
     ${Link} {
-        font-size: 30px !important;
+        font-size: 26px !important;
     }
 
     @media screen and (min-width: 1024px) {
@@ -152,6 +152,7 @@ export const Header = () => {
             {
                 isMobileOpened && <MobileLinks>
                     <Links onClick={handleLinkClick}/>
+                    <ContactBtnListItem />
                 </MobileLinks>
             }
 
