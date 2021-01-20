@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Box } from '../';
-import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react'
+import { Box } from '../../common';
+import { Button, Header, Icon, Modal, Form, Message } from 'semantic-ui-react'
 
 const StyledModal = styled(Modal)`
-  z-index: 9999 !important;
   @media screen and (min-width: 768px) {
     width: 66% !important;
   }
@@ -29,7 +28,17 @@ const RightButton = styled(Button)`
   }
 `;
 
-export const ModalForm = ({ open, setOpen, onClose, number, name, handleChange, onSend }) => {
+export const ModalForm = ({
+  open,
+  setOpen,
+  onClose,
+  number,
+  name,
+  handleChange,
+  onSend,
+  isSending,
+  response
+}) => {
   return (
     <StyledModal
       closeIcon
@@ -48,13 +57,20 @@ export const ModalForm = ({ open, setOpen, onClose, number, name, handleChange, 
             <input required value={number} onChange={handleChange} name="number" placeholder='Номер или телеграм' />
           </Form.Field>
         </Form>
+        {
+          response.success === false && <Message
+            error
+            header='Проверьте ваш ввод'
+            content='Поля не должны быть пустые'
+          />
+        }
       </Modal.Content>
       <Actions>
         <Button onClick={() => setOpen(false)}>
           Отменить
           </Button>
-        <RightButton primary onClick={onSend}>
-           Отправить
+        <RightButton loading={isSending} disabled={isSending} primary onClick={onSend}>
+          Отправить
         </RightButton>
       </Actions>
     </StyledModal>

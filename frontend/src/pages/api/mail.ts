@@ -14,12 +14,12 @@ async function main(name, number) {
   });
 
   let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>',
+    from: '"Essential skills " <foo@example.com>',
     to: "essentialskills2@gmail.com",
-    subject: "Hello ✔",
+    subject: "Новый ученик 👻",
     text: "Новый ученик 👻",
-    html: `<b>Имя: ${name}</b>
-           <b>Номер: ${number}</b>`,
+    html: `<p><b>Имя: ${name}</b></p>
+           <p><b>Номер или аккаунт: ${number}</b></p>`,
   });
 
   console.log("Message sent: %s", info.messageId);
@@ -29,9 +29,14 @@ async function main(name, number) {
 
 export default async function handler(req, res) {
     const { name, number } = req.body;
-    await main(name, number);
-
-    res.statusCode = 200
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ name: 'John Doe' }));
+    res.statusCode = 200
+
+    if (name !== '' && number !== '') {
+        await main(name, number);
+        res.end(JSON.stringify({ success: true, message: 'Заявка успешно отправлена! Скоро с вами свяжутся'  }));
+    } else {
+        res.end(JSON.stringify({ success: false, message: 'Поля не должны быть пустые' }))
+    }
+
   };

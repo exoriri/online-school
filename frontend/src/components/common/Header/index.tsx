@@ -124,7 +124,7 @@ export const Links = ({ onClick }) => (
 export const Header = () => {
     const [isMobileOpened, setIsMobileOpened] = useState(false);
 
-    const handleLinkClick = () => {
+    const handleLinkClick = (e) => {
         setIsMobileOpened(false);
     }
 
@@ -135,7 +135,7 @@ export const Header = () => {
                     <Image width={150} height={60} src={"logo2.png"} alt="logo" />
                 </a>
                 <HeaderLinks inverted link>
-                    <Links onClick={handleLinkClick}/>
+                    <Links onClick={handleLinkClick} />
                     <ContactBtnListItem />
                 </HeaderLinks>
                 {!isMobileOpened ? <HamburgerButton onClick={() => { setIsMobileOpened(!isMobileOpened) }}>
@@ -151,7 +151,7 @@ export const Header = () => {
             />
             {
                 isMobileOpened && <MobileLinks>
-                    <Links onClick={handleLinkClick}/>
+                    <Links onClick={handleLinkClick} />
                     <ContactBtnListItem />
                 </MobileLinks>
             }
