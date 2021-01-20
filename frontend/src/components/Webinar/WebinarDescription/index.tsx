@@ -131,9 +131,8 @@ export const WebinarDescription = () => (
             </List>
             <СlarificationText>* Кстати, вебинар полностью <FreeText>Бесплатный</FreeText></СlarificationText>
             <ApplicBtn>
-            <ContactBtn />
-        </ApplicBtn>
+                <ContactBtn />
+            </ApplicBtn>
         </FeaturesList>
-
     </Wrapper>
 );
