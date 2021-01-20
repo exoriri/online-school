@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { List, Button, Icon, Message } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
-import { Box } from '../../common';
 import { postData } from '../../../client';
 import { ModalForm } from './ModalForm';
 import { ModalFormSuccess } from './ModalFormSuccess';

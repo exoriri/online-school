@@ -132,7 +132,7 @@ export const Header = () => {
         <>
             <StyledHeader isMobileOpened={isMobileOpened}>
                 <a href="#">
-                    <Image width={150} height={60} src={"logo2.png"} alt="logo" />
+                    <Image width={150} height={60} src={"logo1.png"} alt="logo" />
                 </a>
                 <HeaderLinks inverted link>
                     <Links onClick={handleLinkClick} />

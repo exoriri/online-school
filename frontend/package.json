@@ -6,7 +6,7 @@
   "dependencies": {
     "next": "^9.5.5",
     "nodemailer": "^6.4.17",
-    "now": "^17.1.1",
+    "now": "^21.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "reset-css": "^5.0.1",
