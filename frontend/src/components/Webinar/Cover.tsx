@@ -13,7 +13,7 @@ const CoverTitle = styled(H1)`
     font-weight: bold;
     text-align: center;
     font-size: 24px;
-
+    text-transform: uppercase;
     @media screen and (min-width: 1024px) {
         font-size: 30px;
     }

@@ -40,11 +40,11 @@ const ImageMe = styled.img`
     height: auto;
 
     @media screen and (min-width: 560px) and (max-width: 768px) {
-        max-width: 70%;
+        max-width: 60%;
     }
 
     @media screen and (min-width: 768px) {
-        max-width: 50%;
+        max-width: 30%;
     }
 `;
 

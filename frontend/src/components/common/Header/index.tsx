@@ -20,6 +20,7 @@ const StyledHeader = styled.header`
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 10px 0 10px;
+    position: fixed;
 `;
 
 const Link = styled(List.Item)`
@@ -111,6 +112,11 @@ const ListItem = styled.li`
         margin-bottom: 0px;
     }
     
+`;
+
+const HeaderWrapper = styled(Box)`
+    position: fixed;
+    top: 0;
 `;
 
 export const Links = ({ onClick }) => (

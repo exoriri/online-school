@@ -11,6 +11,7 @@ const Wrapper = styled(Box)`
 const Title = styled(H1)`
     font-size: 32px;
     font-weight: bold;
+    text-transform: uppercase;
 `;
 
 const IntstagramText = styled(Paragraph)`

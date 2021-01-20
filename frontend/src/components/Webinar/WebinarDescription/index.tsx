@@ -28,6 +28,7 @@ const Title = styled(H1)`
     color: #fff;
     font-size: 36px;
     font-weight: bold !important;
+    text-transform: uppercase;
 
     @media screen and (min-width: 1024px) {
         font-size: 36px;
@@ -75,6 +76,8 @@ const FeaturesList = styled(Box)`
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    width: 90%;
+    margin: 20px auto 20px auto;
 `;
 
 const FeaturesListItem = styled.li`
@@ -123,13 +126,14 @@ export const WebinarDescription = () => (
                 <FeaturesListItem><ListIcon name="check" /><span>Какой язык программирования стоит учить?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Что такое веб?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Фриланс vs Найм</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>Стоит ли вам брать курс?</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>20% Скидки на первый курс | ступень новобранца</span></FeaturesListItem>
+                <FeaturesListItem><ListIcon name="check" /><span>Стоит ли тебе брать курс?</span></FeaturesListItem>
+                <FeaturesListItem><ListIcon name="check" /><span>20% Скидка на курс</span></FeaturesListItem>
             </List>
             <СlarificationText>* Кстати, вебинар полностью <FreeText>Бесплатный</FreeText></СlarificationText>
-        </FeaturesList>
-        <ApplicBtn>
+            <ApplicBtn>
             <ContactBtn />
         </ApplicBtn>
+        </FeaturesList>
+
     </Wrapper>
 );
