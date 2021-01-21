@@ -29,7 +29,7 @@ const Title = styled(H1)`
     font-size: 36px;
     font-weight: bold !important;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-family: LatoBold, sans-serif !important;
 
     @media screen and (min-width: 1024px) {
@@ -119,7 +119,7 @@ export const WebinarDescription = () => (
                 <Text>Уверен, ты удивишься, когда узнаешь, что можно делать крутые вещи не выходя из дома или из своего номера на острове</Text>
             </Description>
         </DescriptionContainer>
-        <Cover id="webinar" text="Что ты узнаешь о вебинаре?" />
+        <Cover id="webinar" text="Что ты получишь и узнаешь на вебинаре?" />
         <FeaturesList>
             <List>
                 <FeaturesListItem><ListIcon name="check" /><span>Какой язык программирования стоит учить?</span></FeaturesListItem>
