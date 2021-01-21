@@ -30,6 +30,7 @@ const Title = styled(H1)`
     font-weight: bold !important;
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-family: LatoBold, sans-serif !important;
 
     @media screen and (min-width: 1024px) {
         font-size: 36px;
@@ -40,6 +41,7 @@ const Text = styled(H2)`
     font-size: 20px;
     color: #d6d6d6;
     letter-spacing: 3px;
+    font-family: LatoRegular, sans-serif !important;
 
     @media screen and (min-width: 1024px) {
         font-size: 26px;

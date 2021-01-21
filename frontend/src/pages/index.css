@@ -1,6 +1,21 @@
+@font-face {
+    font-family: "LatoBold";
+    src: local("Lato-Bold"),
+      url(../../public/fonts/Lato-Bold.ttf) format("truetype");
+    font-weight: normal;
+} 
+
+@font-face {
+    font-family: "LatoRegular";
+    src: local("Lato-Regular"),
+      url(../../public/fonts/Lato-Regular.ttf) format("truetype");
+    font-weight: normal;
+}  
+
 html, body {
     height: 100vh;
     scroll-behavior: smooth !important;
+    font-family: 'LatoRegular', sans-serif !important;
 }
 
 .wrapper {

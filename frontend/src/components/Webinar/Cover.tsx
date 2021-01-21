@@ -14,6 +14,8 @@ const CoverTitle = styled(H1)`
     text-align: center;
     font-size: 24px;
     text-transform: uppercase;
+    font-family: LatoBold, sans-serif !important;
+
     @media screen and (min-width: 1024px) {
         font-size: 30px;
     }
