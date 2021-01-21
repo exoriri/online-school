@@ -11,13 +11,13 @@ const Wrapper = styled(Box)`
     overflow: auto;
 `;
 
-const HomePage = () => (
-     <Wrapper>
+const HomePage = () => {
+     return <Wrapper>
         <Header />
         <WebinarDescription />
         <AboutAuthor />
         <Contacts />
     </Wrapper>
-);
+};
 
 export default HomePage;

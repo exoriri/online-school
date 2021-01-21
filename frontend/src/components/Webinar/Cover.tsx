@@ -19,8 +19,8 @@ const CoverTitle = styled(H1)`
     }
 `;
 
-export const Cover = ({ text }) => (
-    <CoverWrapper>
+export const Cover = ({ text, id='' }) => (
+    <CoverWrapper id={id}>
         <CoverTitle>{text}</CoverTitle>
     </CoverWrapper>
 );

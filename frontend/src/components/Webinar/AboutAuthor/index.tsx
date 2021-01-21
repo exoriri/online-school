@@ -8,6 +8,11 @@ const StyledParagraph = styled(Paragraph)`
     color: #fff;
     font-size: 20px;
     line-height: 1.5em;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
 `;
 
 const Description = styled(Box)`

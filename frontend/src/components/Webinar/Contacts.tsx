@@ -12,10 +12,12 @@ const Title = styled(H1)`
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: 10px;
 `;
 
 const IntstagramText = styled(Paragraph)`
     font-size: 20px;
+    margin-bottom: 15px;
 `;
 
 const ListIcons = styled.ul`
@@ -34,7 +36,7 @@ export const Contacts = () => {
             <ListIcons>
                 <ListItem>
                     <a href="http://www.instagram.com/essential_skillset">
-                        <img width={30} height={30} src="instagram-copy.svg" alt="instagram"/>
+                        <img width={40} height={40} src="instagram-copy.svg" alt="instagram"/>
                     </a>
                 </ListItem>
             </ListIcons>

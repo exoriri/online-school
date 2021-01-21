@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../../common';
 
@@ -20,11 +20,9 @@ const StyledHeader = styled.header`
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 10px 0 10px;
-    position: fixed;
 `;
 
 const Link = styled(List.Item)`
-    font-size: 15px;
     color: #e1e2e6;
     cursor: pointer;
     font-size: 16px !important;
@@ -61,7 +59,7 @@ const HamburgerButton = styled(Button)`
 
 const HamburgerIcon = styled(Icon)`
     color: #fff;
-    margin: 0 !important;
+    margin: 0!important;
 `;
 
 const MobileMenu = styled(Box)`
@@ -95,28 +93,28 @@ const MobileLinks = styled.ul`
 const ListItem = styled.li`
     margin-bottom: 30px;
     list-style-type: none;
-    &:last-child {
+        &:last-child {
         margin-bottom: 0;
     }
 
     ${Link} {
-        font-size: 26px !important;
+        font-size: 26px!important;
     }
 
     @media screen and (min-width: 1024px) {
         margin-right: 25px;
 
         ${Link} {
-            font-size: 17px !important;
+            font-size: 17px!important;
         }
         margin-bottom: 0px;
     }
-    
+
 `;
 
 const HeaderWrapper = styled(Box)`
-    position: fixed;
-    top: 0;
+position: fixed;
+top: 0;
 `;
 
 export const Links = ({ onClick }) => (
@@ -128,11 +126,31 @@ export const Links = ({ onClick }) => (
 );
 
 export const Header = () => {
+    const headerRef = useRef(null);
     const [isMobileOpened, setIsMobileOpened] = useState(false);
+    const [sticky, setSticky] = useState(false);
+
 
     const handleLinkClick = (e) => {
         setIsMobileOpened(false);
     }
+
+    const [scrollY, setScrollY] = useState(0);
+
+    function logit() {
+      setScrollY(window.pageYOffset);
+      console.log(new Date().getTime());
+    }
+  
+    useEffect(() => {
+      function watchScroll() {
+        window.addEventListener("scroll", logit);
+      }
+      watchScroll();
+      return () => {
+        window.removeEventListener("scroll", logit);
+      };
+    });
 
     return (
         <>

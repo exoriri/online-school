@@ -29,6 +29,7 @@ const Title = styled(H1)`
     font-size: 36px;
     font-weight: bold !important;
     text-transform: uppercase;
+    margin-bottom: 20px;
 
     @media screen and (min-width: 1024px) {
         font-size: 36px;
@@ -50,10 +51,6 @@ const ApplicBtn = styled(Box)`
     display: flex;
     justify-content: center;
     margin-top: 10px;
-
-    @media screen and (min-width: 1024px) {
-        display: none;
-    }
 `;
 
 const BgImage = styled(Box)`
@@ -114,13 +111,13 @@ const FreeText = styled.span`
 export const WebinarDescription = () => (
     <Wrapper>
         <BgImage />
-        <DescriptionContainer id="webinar">
+        <DescriptionContainer>
             <Description>
                 <Title>Узнай все о web-разработке</Title>
                 <Text>Уверен, ты удивишься, когда узнаешь, что можно делать крутые вещи не выходя из дома или из своего номера на острове</Text>
             </Description>
         </DescriptionContainer>
-        <Cover text="Что ты узнаешь о вебинаре?" />
+        <Cover id="webinar" text="Что ты узнаешь о вебинаре?" />
         <FeaturesList>
             <List>
                 <FeaturesListItem><ListIcon name="check" /><span>Какой язык программирования стоит учить?</span></FeaturesListItem>
