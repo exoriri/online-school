@@ -26,6 +26,10 @@ const RightButton = styled(Button)`
   &:hover {
       background: #3963e6 !important;
   }
+
+  @media screen and (max-width: 600px) {
+    margin-left: 10px;
+  }
 `;
 
 export const ModalForm = ({
@@ -45,7 +49,7 @@ export const ModalForm = ({
       open={open}
       onClose={onClose}
     >
-      <Header content='Оставите свои контактные данные и мы с вами свяжемся &#x1f60a;' />
+      <Header content='Оставьте свои контактные данные и мы с вами свяжемся &#x1f60a;' />
       <Modal.Content>
         <Form>
           <Form.Field>
