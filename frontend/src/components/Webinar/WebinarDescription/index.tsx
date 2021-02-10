@@ -125,7 +125,7 @@ export const WebinarDescription = () => (
                 <FeaturesListItem><ListIcon name="check" /><span>Что такое веб?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Небольшой экскурс в HTML, CSS, JS</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Что происходит когда ты вводишь очередной вопрос в адресную строку</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>Стоит ли тебе брать курс?</span></FeaturesListItem>
+                <FeaturesListItem><ListIcon name="check" /><span>Нужно ли тебе быть разработчиком или вообще быть в IT?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>20% Скидка на курс</span></FeaturesListItem>
             </List>
             <СlarificationText>* Кстати, вебинар полностью <FreeText>Бесплатный</FreeText></СlarificationText>
