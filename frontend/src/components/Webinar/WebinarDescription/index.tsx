@@ -122,9 +122,9 @@ export const WebinarDescription = () => (
         <Cover id="webinar" text="Что ты получишь и узнаешь на вебинаре?" />
         <FeaturesList>
             <List>
-                <FeaturesListItem><ListIcon name="check" /><span>Какой язык программирования стоит учить?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Что такое веб?</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>Фриланс vs Найм</span></FeaturesListItem>
+                <FeaturesListItem><ListIcon name="check" /><span>Небольшой экскурс в HTML, CSS, JS</span></FeaturesListItem>
+                <FeaturesListItem><ListIcon name="check" /><span>Что происходит когда ты вводишь очередной вопрос в адресную строку</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>Стоит ли тебе брать курс?</span></FeaturesListItem>
                 <FeaturesListItem><ListIcon name="check" /><span>20% Скидка на курс</span></FeaturesListItem>
             </List>
