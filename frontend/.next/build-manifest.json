@@ -1,38 +1,33 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills-11c8eba6a84e3fddec04.js"
+    "static/chunks/polyfills.js"
   ],
-  "devFiles": [],
-  "ampDevFiles": [],
+  "devFiles": [
+    "static/chunks/react-refresh.js"
+  ],
+  "ampDevFiles": [
+    "static/chunks/webpack.js",
+    "static/chunks/amp.js"
+  ],
   "lowPriorityFiles": [
-    "static/fD78EgH216EUp7KasoCTF/_buildManifest.js",
-    "static/fD78EgH216EUp7KasoCTF/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/main-3bcdc849c0803882c5d0.js",
-      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
-      "static/chunks/framework.d342f5f3955b7f7d6277.js",
-      "static/chunks/commons.843becd140c22db54f6b.js",
-      "static/chunks/pages/index-90479f47902bc90f5aa8.js"
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/index.js"
     ],
     "/_app": [
-      "static/chunks/main-3bcdc849c0803882c5d0.js",
-      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
-      "static/chunks/framework.d342f5f3955b7f7d6277.js",
-      "static/css/aa5bd59c07c7afb5fa60.css",
-      "static/chunks/02db7968.bca366718f045dbe8189.js",
-      "static/chunks/commons.843becd140c22db54f6b.js",
-      "static/chunks/f6078781a05fe1bcb0902d23dbbb2662c8d200b3.e10d1da399469f6d05e5.js",
-      "static/css/891119e255c3d197400c.css",
-      "static/chunks/pages/_app-949f30e1eadff3c26cb7.js"
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/_app.js"
     ],
     "/_error": [
-      "static/chunks/main-3bcdc849c0803882c5d0.js",
-      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
-      "static/chunks/framework.d342f5f3955b7f7d6277.js",
-      "static/chunks/commons.843becd140c22db54f6b.js",
-      "static/chunks/pages/_error-5eb0f6ddbbaf7ef74547.js"
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/_error.js"
     ]
   },
   "ampFirstPages": []

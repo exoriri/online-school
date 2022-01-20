@@ -16,10 +16,15 @@ const Image = styled.img`
 `;
 
 const StyledHeader = styled.header`
+    position: sticky;
+    top: 0;
+    background: #000;
+    z-index: 9999;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10px 10px 0 10px;
+    padding: 10px;
 `;
 
 const Link = styled(List.Item)`
@@ -113,14 +118,16 @@ const ListItem = styled.li`
 `;
 
 const HeaderWrapper = styled(Box)`
-position: fixed;
-top: 0;
+    position: fixed;
+    top: 0;
 `;
 
 export const Links = ({ onClick }) => (
     <>
         { webinarLinks.map(link => {
-            return <ListItem key={link.id}><Link as="a" onClick={onClick} href={link.href}>{link.title}</Link></ListItem>
+            return <ListItem key={link.id}>
+                <Link as="a" onClick={onClick} href={link.href}>{link.title}</Link>
+            </ListItem>
         })}
     </>
 );
@@ -139,18 +146,17 @@ export const Header = () => {
 
     function logit() {
       setScrollY(window.pageYOffset);
-      console.log(new Date().getTime());
     }
   
-    useEffect(() => {
-      function watchScroll() {
-        window.addEventListener("scroll", logit);
-      }
-      watchScroll();
-      return () => {
-        window.removeEventListener("scroll", logit);
-      };
-    });
+    // useEffect(() => {
+    //   function watchScroll() {
+    //     window.addEventListener("scroll", logit);
+    //   }
+    //   watchScroll();
+    //   return () => {
+    //     window.removeEventListener("scroll", logit);
+    //   };
+    // });
 
     return (
         <>

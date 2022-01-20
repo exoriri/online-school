@@ -1,137 +1,179 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Box, H1, H2, Paragraph } from '../../../components/common';
-import { List, Icon } from 'semantic-ui-react';
+import { Box, H1, H2, Paragraph } from "../../../components/common";
+import { List, Icon } from "semantic-ui-react";
 
-import { ContactBtn, Cover } from '../';
+import { ContactBtn, Cover } from "../";
 
 const Wrapper = styled(Box)`
-    position: relative;
-    object-fit: cover !important;
-    padding: 20px 0 10px 0;
+  position: relative;
+  object-fit: cover !important;
+  padding: 0px 0 10px 0;
 `;
 
 const Description = styled(Box)`
-    text-align: center;
-    margin: 0 auto; 
-    padding-bottom: 20px; 
-    max-width: 650px;
-    min-width: 340px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  max-width: 650px;
+  min-width: 340px;
 
-    @media screen and (min-width: 1024px) {
-        max-width: 650px;
+  @media screen and (min-width: 1024px) {
+    max-width: 650px;
+  }
+`;
+
+const Service = styled(Box)`
+  padding: 20px;
+  border: 1px solid #777777;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  height: 100%;
+  text-align: center;
+
+  &:first-child {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+    display: table-cell;
+
+    &:first-child {
+      margin-bottom: 0;
     }
+  }
+`;
+
+const ServiceTitle = styled(H1)`
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ff995f;
 `;
 
 const Title = styled(H1)`
-    color: #fff;
-    font-size: 36px;
-    font-weight: bold !important;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    font-family: LatoBold, sans-serif !important;
+  color: #ff995f;
+  font-size: 36px;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-family: LatoBold, sans-serif !important;
 
-    @media screen and (min-width: 1024px) {
-        font-size: 36px;
-    }
+  @media screen and (min-width: 1024px) {
+    font-size: 36px;
+  }
 `;
 
 const Text = styled(H2)`
-    font-size: 20px;
-    color: #d6d6d6;
-    letter-spacing: 3px;
-    font-family: LatoRegular, sans-serif !important;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: LatoRegular, sans-serif !important;
 
-    @media screen and (min-width: 1024px) {
-        font-size: 26px;
-    }
+  @media screen and (min-width: 1024px) {
+    font-size: 26px;
+  }
 `;
 
 // TODO: make it just for ContactBtn
 const ApplicBtn = styled(Box)`
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 `;
 
 const BgImage = styled(Box)`
-    background: url(codescreen.png) center;
-    background-size: cover;
-    min-height: 400px;
-    opacity: .3;
+  background: url(main.jpeg) center;
+  background-size: cover;
+  min-height: 100%;
+  opacity: 0.3;
 `;
 
 const DescriptionContainer = styled(Box)`
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const FeaturesList = styled(Box)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    width: 90%;
-    margin: 20px auto 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 20px auto 20px auto;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    margin: 0px auto 0px auto;
+  }
 `;
 
-const FeaturesListItem = styled.li`
-    color: #fff;
-    list-style-type: none;
-    font-size: 20px;
-    padding: 0 10px 20px 10px;
+const ServiceWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 
-    &:last-child {
-        padding: 0 10px 0 10px;
-    }
-
-    @media screen and (min-width:1024px) {
-        font-size: 24px;
-    }
-`;
-
-const СlarificationText = styled(Paragraph)`
-    color: #d6d6d6;
-    font-size: 18px;
-    margin-top: 7px;
-`;
-
-const ListIcon = styled(Icon)`
-    margin-right: .76   em !important;
-    color: #2dbd54;
-`;
-
-const FreeText = styled.span`
-    color: #e65010;
-    text-transform: uppercase;
+  @media screen and (min-width: 1024px) {
+    display: table;
+    border-spacing: 20px;
+  }
 `;
 
 export const WebinarDescription = () => (
-    <Wrapper>
-        <BgImage />
-        <DescriptionContainer>
-            <Description>
-                <Title>Узнай все о web-разработке</Title>
-                <Text>Уверен, ты удивишься, когда узнаешь, что можно делать крутые вещи не выходя из дома или из своего номера на острове</Text>
-            </Description>
-        </DescriptionContainer>
-        <Cover id="webinar" text="Что ты получишь и узнаешь на вебинаре?" />
-        <FeaturesList>
-            <List>
-                <FeaturesListItem><ListIcon name="check" /><span>Что такое веб?</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>Небольшой экскурс в HTML, CSS, JS</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>Что происходит когда ты вводишь очередной вопрос в адресную строку</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>Нужно ли тебе быть разработчиком или вообще быть в IT?</span></FeaturesListItem>
-                <FeaturesListItem><ListIcon name="check" /><span>20% Скидка на курс</span></FeaturesListItem>
-            </List>
-            <СlarificationText>* Кстати, вебинар полностью <FreeText>Бесплатный</FreeText></СlarificationText>
-            <ApplicBtn>
-                <ContactBtn />
-            </ApplicBtn>
-        </FeaturesList>
-    </Wrapper>
+  <Wrapper>
+    <div style={{ height:380, position: "relative" }}>
+      <BgImage />
+      <DescriptionContainer>
+        <Description>
+          <Title>IT Решения для вашего Бизнеса.</Title>
+          <div>
+            <Text>Обсуждаем</Text>
+            <Text>Делаем</Text>
+            <Text>Запускаем</Text>
+          </div>
+        </Description>
+      </DescriptionContainer>
+    </div>
+
+    <Cover id="webinar" text="Мы делаем" />
+
+    <FeaturesList>
+      <ServiceWrapper>
+        <Service>
+          <ServiceTitle>Мобильные приложения</ServiceTitle>
+          <Text>
+            Cоздаем приложения для всех платформ: Android, iOS, AppGallery​
+          </Text>
+        </Service>
+        <Service>
+          <ServiceTitle>Интернет Магазины</ServiceTitle>
+          <Text>
+            Создаем фирменный дизайн, интегрируем платежные системы и отправляем
+            сайт в production 🚀​
+          </Text>
+        </Service>
+      </ServiceWrapper>
+    </FeaturesList>
+    <FeaturesList>
+      <ServiceWrapper>
+        <Service>
+          <ServiceTitle>WEB - ПРИЛОЖЕНИЯ​</ServiceTitle>
+          <Text>
+            Делаем административные панели, интегрируем сторонние сервисы.​​
+          </Text>
+        </Service>
+        <Service>
+          <ServiceTitle>LANDING-PAGES​</ServiceTitle>
+          <Text>Сайты привлекающие клиентов, сотрудников, любовников.​​​</Text>
+        </Service>
+      </ServiceWrapper>
+    </FeaturesList>
+    <ApplicBtn>
+      <ContactBtn />
+    </ApplicBtn>
+  </Wrapper>
 );

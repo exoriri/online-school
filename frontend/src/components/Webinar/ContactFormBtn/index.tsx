@@ -69,7 +69,7 @@ export const ContactBtn = () => {
     return (
         <>
             <StyledButton primary onClick={onRequestBtnClick}>
-                Оставить заявку
+                Заказать консультацию
             </StyledButton>
             <ModalFormSuccess
                 handleClose={handleSuccessModalClose}
