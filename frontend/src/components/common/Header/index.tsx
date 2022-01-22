@@ -84,8 +84,8 @@ const ContactBtnListItem = styled(ContactBtn)`
 const MobileLinks = styled.ul`
     position: absolute;
     left: 50%;
-    top: 35px;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 8888;
     display: flex;
     flex-direction: column;
@@ -117,11 +117,6 @@ const ListItem = styled.li`
 
 `;
 
-const HeaderWrapper = styled(Box)`
-    position: fixed;
-    top: 0;
-`;
-
 export const Links = ({ onClick }) => (
     <>
         { webinarLinks.map(link => {
@@ -132,31 +127,12 @@ export const Links = ({ onClick }) => (
     </>
 );
 
-export const Header = () => {
-    const headerRef = useRef(null);
+export const Header = ({ onRequestBtnClick }) => {
     const [isMobileOpened, setIsMobileOpened] = useState(false);
-    const [sticky, setSticky] = useState(false);
-
 
     const handleLinkClick = (e) => {
         setIsMobileOpened(false);
-    }
-
-    const [scrollY, setScrollY] = useState(0);
-
-    function logit() {
-      setScrollY(window.pageYOffset);
-    }
-  
-    // useEffect(() => {
-    //   function watchScroll() {
-    //     window.addEventListener("scroll", logit);
-    //   }
-    //   watchScroll();
-    //   return () => {
-    //     window.removeEventListener("scroll", logit);
-    //   };
-    // });
+    };
 
     return (
         <>
@@ -166,7 +142,9 @@ export const Header = () => {
                 </a>
                 <HeaderLinks inverted link>
                     <Links onClick={handleLinkClick} />
-                    <ContactBtnListItem />
+                    <ContactBtnListItem 
+                       onRequestBtnClick={onRequestBtnClick}
+                    />
                 </HeaderLinks>
                 {!isMobileOpened ? <HamburgerButton onClick={() => { setIsMobileOpened(!isMobileOpened) }}>
                     <HamburgerIcon size="big" name="content" />
@@ -182,7 +160,7 @@ export const Header = () => {
             {
                 isMobileOpened && <MobileLinks>
                     <Links onClick={handleLinkClick} />
-                    <ContactBtnListItem />
+                    <ContactBtnListItem  onRequestBtnClick={onRequestBtnClick}/>
                 </MobileLinks>
             }
 

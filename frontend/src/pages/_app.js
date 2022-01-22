@@ -1,12 +1,12 @@
 // import App from 'next/app'
 
 import 'reset-css';
-import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css'; //Allows for server-side rendering.
 import './index.css';
 
 function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
-  }
+  return <Component {...pageProps} />
+}
   
   // Only uncomment this method if you have blocking data requirements for
   // every single page in your application. This disables the ability to

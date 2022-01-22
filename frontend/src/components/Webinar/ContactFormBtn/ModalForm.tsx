@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../../common';
-import { Button, Header, Icon, Modal, Form, Message } from 'semantic-ui-react'
+import { 
+  Button, 
+  Header, 
+  Icon, 
+  Modal, 
+  Form, 
+  Message,
+  TextArea
+} from 'semantic-ui-react';
 
 const StyledModal = styled(Modal)`
   @media screen and (min-width: 768px) {
@@ -39,6 +47,7 @@ export const ModalForm = ({
   number,
   name,
   handleChange,
+  description,
   onSend,
   isSending,
   response
@@ -60,6 +69,12 @@ export const ModalForm = ({
             <label>Ваш номер телефона или телеграм аккаунт</label>
             <input required value={number} onChange={handleChange} name="number" placeholder='Номер или телеграм' />
           </Form.Field>
+          <TextArea
+            name="description"
+            value={description}
+            onChange={handleChange}
+            placeholder="Что ваш инетересует? Например: мне нужно мобильное приложение для..."
+          />
         </Form>
         {
           response.success === false && <Message

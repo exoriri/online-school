@@ -2,12 +2,12 @@ export const webinarLinks = [
     {
         id: 1,
         title: 'Услуги',
-        href: '#webinar'
+        href: '#services'
     },
     {
         id: 2,
-        title: 'Мы ислользуем',
-        href: '#author'
+        title: 'Технологии',
+        href: '#technologies'
     },
     {
         id: 3,

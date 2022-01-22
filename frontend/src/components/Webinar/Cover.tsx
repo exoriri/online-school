@@ -8,7 +8,7 @@ const CoverWrapper = styled(Box)`
     padding: 15px 0;
 `;
 
-const CoverTitle = styled(H1)`
+export const CoverTitle = styled(H1)`
     color: #fff;
     font-weight: bold;
     text-align: center;

@@ -5,6 +5,7 @@ import { Box, H1, H2, Paragraph } from "../../../components/common";
 import { List, Icon } from "semantic-ui-react";
 
 import { ContactBtn, Cover } from "../";
+import { ContactForm } from "../../Landing";
 
 const Wrapper = styled(Box)`
   position: relative;
@@ -55,7 +56,7 @@ const ServiceTitle = styled(H1)`
 
 const Title = styled(H1)`
   color: #ff995f;
-  font-size: 36px;
+  font-size: 30px !important;
   font-weight: bold !important;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -123,9 +124,9 @@ const ServiceWrapper = styled.div`
   }
 `;
 
-export const WebinarDescription = () => (
+export const WebinarDescription = ({ onRequestBtnClick }) => (
   <Wrapper>
-    <div style={{ height:380, position: "relative" }}>
+    <div style={{ height:300, position: "relative" }}>
       <BgImage />
       <DescriptionContainer>
         <Description>
@@ -133,14 +134,14 @@ export const WebinarDescription = () => (
           <div>
             <Text>Обсуждаем</Text>
             <Text>Делаем</Text>
+            <div style={{ visibility: 'hidden', height: 0 }} id="services">asdf</div>
             <Text>Запускаем</Text>
           </div>
         </Description>
       </DescriptionContainer>
     </div>
 
-    <Cover id="webinar" text="Мы делаем" />
-
+    <Cover text="Мы делаем" />
     <FeaturesList>
       <ServiceWrapper>
         <Service>
@@ -168,12 +169,13 @@ export const WebinarDescription = () => (
         </Service>
         <Service>
           <ServiceTitle>LANDING-PAGES​</ServiceTitle>
-          <Text>Сайты привлекающие клиентов, сотрудников, любовников.​​​</Text>
+          <Text>Сайты, которые привлекают: клиентов, сотрудников, любовников.​​​</Text>
         </Service>
       </ServiceWrapper>
     </FeaturesList>
     <ApplicBtn>
-      <ContactBtn />
+      <ContactBtn onRequestBtnClick={onRequestBtnClick} size={'huge'} />
+      <div style={{ visibility: 'hidden' }} id="technologies">asdf</div>
     </ApplicBtn>
   </Wrapper>
 );
