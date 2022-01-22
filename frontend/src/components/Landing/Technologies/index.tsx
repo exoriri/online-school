@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import Image from 'next/image';
 import { Cover } from "../../Webinar";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -45,7 +46,7 @@ export const Technologies = () => {
               alignItems: "center",
             }}
           >
-            <img src="/slider-images/angular.png" />
+            <img alt="angular" src="/slider-images/angular.png" />
           </div>
           <div
             style={{
@@ -55,7 +56,7 @@ export const Technologies = () => {
               alignItems: "center",
             }}
           >
-            <img src="/slider-images/react.png" />
+            <img alt="react" src="/slider-images/react.png" />
           </div>
           <div
             style={{
@@ -65,7 +66,7 @@ export const Technologies = () => {
               alignItems: "center",
             }}
           >
-            <img src="/slider-images/Logo-Vuejs.png" />
+            <img alt="vue" src="/slider-images/Logo-Vuejs.png" />
           </div>
           <div
             style={{
@@ -75,7 +76,7 @@ export const Technologies = () => {
               alignItems: "center",
             }}
           >
-            <img src="/slider-images/redux.png" />
+            <img alt="redux" src="/slider-images/redux.png" />
           </div>
           <div
             style={{
@@ -85,7 +86,7 @@ export const Technologies = () => {
               alignItems: "center",
             }}
           >
-            <img src="/slider-images/MongoDB-Logo.png" />
+            <img alt="mongo" src="/slider-images/MongoDB-Logo.png" />
           </div>
           <div
             style={{
@@ -95,7 +96,7 @@ export const Technologies = () => {
               alignItems: "center",
             }}
           >
-            <img src="/slider-images/postgress.png" />
+            <img alt="postgress" src="/slider-images/postgress.png" />
           </div>
         </OwlCarousel>
       </div>

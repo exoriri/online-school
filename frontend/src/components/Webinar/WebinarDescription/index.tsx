@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import styled from "styled-components";
 
 import { Box, H1, H2, Paragraph } from "../../../components/common";
@@ -157,12 +158,14 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
       <ServiceWrapper>
         <Service>
           <ServiceTitle>Мобильные приложения</ServiceTitle>
+          <Image alt="smartphone" width={64} height={64} src="/services-images/development.png" />
           <Text>
             Cоздаем приложения для всех платформ: Android, iOS, AppGallery​
           </Text>
         </Service>
         <Service>
           <ServiceTitle>Интернет Магазины</ServiceTitle>
+          <Image alt="store" width={64} height={64} src="/services-images/store.png" />
           <Text>
             Создаем фирменный дизайн, интегрируем платежные системы и отправляем
             сайт в production 🚀​
@@ -174,12 +177,14 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
       <ServiceWrapper>
         <Service>
           <ServiceTitle>WEB - ПРИЛОЖЕНИЯ​</ServiceTitle>
+          <Image alt="web" width={64} height={64} src="/services-images/web.png" />
           <Text>
             Делаем административные панели, интегрируем сторонние сервисы.​​
           </Text>
         </Service>
         <Service>
           <ServiceTitle>LANDING-PAGES​</ServiceTitle>
+          <Image alt="landing" width={64} height={64} src="/services-images/landing.png" />
           <Text>Сайты, которые привлекают: клиентов, сотрудников, любовников.​​​</Text>
         </Service>
       </ServiceWrapper>

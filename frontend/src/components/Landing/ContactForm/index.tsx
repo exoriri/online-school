@@ -35,7 +35,6 @@ export const ContactForm = (
     onSend
   }
 ) => {
-  console.log(response.success)
   return (
     <Wrapper>
       <CoverTitle>Свяжитесь с нами для бесплатной консультации</CoverTitle>

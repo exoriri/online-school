@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Script from "next/script";
+import Head from "next/head";
 import styled from "styled-components";
 
 import { Header, Box } from "../components/common";
@@ -8,7 +9,7 @@ import {
   WebinarDescription,
   Contacts,
   ModalFormSuccess,
-  ModalForm
+  ModalForm,
 } from "../components/Webinar";
 import { postData } from "../client";
 
@@ -53,30 +54,34 @@ const HomePage = () => {
     setResponse(() => INITIAL_RESPONSE);
 
     //@ts-ignore
-    grecaptcha.ready(function() {
+    grecaptcha.ready(function () {
       //@ts-ignore
-      grecaptcha.execute('6Ldp-yseAAAAALozzoVycH0j07AwW2b61MdN9n1E', {action: 'submit'}).then(async function(token) {
-        const res = await postData("/api/mail", {
-          name: formValue.name,
-          number: formValue.number,
-          description: formValue.description,
-          c_token: token
-        });
-    
-        setIsSendng(false);
-    
-        if (res.success) {
-          setModalOpen(false);
-          setIsSuccessModal(true);
-          setFormValue({
-            name: "",
-            number: "",
-            description: "",
+      grecaptcha
+        .execute("6Ldp-yseAAAAALozzoVycH0j07AwW2b61MdN9n1E", {
+          action: "submit",
+        })
+        .then(async function (token) {
+          const res = await postData("/api/mail", {
+            name: formValue.name,
+            number: formValue.number,
+            description: formValue.description,
+            c_token: token,
           });
-        } else {
-          setResponse(() => res);
-        }
-      });
+
+          setIsSendng(false);
+
+          if (res.success) {
+            setModalOpen(false);
+            setIsSuccessModal(true);
+            setFormValue({
+              name: "",
+              number: "",
+              description: "",
+            });
+          } else {
+            setResponse(() => res);
+          }
+        });
     });
   };
 
@@ -86,14 +91,21 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <>
+      <Head>
+        <title>
+          Приложения, сайты, дизайн, маркетинг и лучшие IT решения для бизнеса
+        </title>
+        <meta
+          name="description"
+          content="Мобильные приложения, интернет магазины, веб приложения, лэндинги и маркетинг"
+        />
+        <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
+        <meta name="google" content="notranslate" key="notranslate" />
+      </Head>
       <Wrapper>
-        <Header 
-           onRequestBtnClick={onRequestBtnClick}
-        />
-        <WebinarDescription 
-          onRequestBtnClick={onRequestBtnClick}
-        />
+        <Header onRequestBtnClick={onRequestBtnClick} />
+        <WebinarDescription onRequestBtnClick={onRequestBtnClick} />
         <Technologies />
         <ContactForm
           name={formValue.name}
@@ -124,7 +136,7 @@ const HomePage = () => {
       </Wrapper>
       <Script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" />
       <Script src="https://www.google.com/recaptcha/api.js?render=6Ldp-yseAAAAALozzoVycH0j07AwW2b61MdN9n1E" />
-    </div>
+    </>
   );
 };
 
