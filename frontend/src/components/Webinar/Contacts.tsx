@@ -18,12 +18,30 @@ const Title = styled(H1)`
 
 const ListIcons = styled.ul`
     display: flex;
+    flex-direction: column;
 `;
 
 const ListItem = styled.li`
     margin-right: 10px;
     display: flex;
     align-items: center;
+`;
+
+const WhatsappBtn = styled.a`
+    background: #000;
+    border: none;
+    padding: 10px 25px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+
+    &:hover {
+        color: #fff;
+        background: #333;
+    }
 `;
 
 export const Contacts = () => {
@@ -41,7 +59,10 @@ export const Contacts = () => {
                     </a>
                 </ListItem>
                 <ListItem>
-
+                    <WhatsappBtn href="https://wa.me/796435651492">
+                        <img src="/whatsapp.svg" />
+                        <span style={{ marginLeft: 10 }}>Whatsapp</span>
+                    </WhatsappBtn>
                 </ListItem>
             </ListIcons>
         </Wrapper>

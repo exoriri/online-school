@@ -81,8 +81,19 @@ const Text = styled(H2)`
 // TODO: make it just for ContactBtn
 const ApplicBtn = styled(Box)`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  width: 90%;
+  margin: 0 auto;
   margin-top: 10px;
+  
+  @media screen and (min-width: 500px) {
+    width: 66%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 30%;
+  }
 `;
 
 const BgImage = styled(Box)`

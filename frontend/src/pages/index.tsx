@@ -52,25 +52,32 @@ const HomePage = () => {
     setIsSendng(true);
     setResponse(() => INITIAL_RESPONSE);
 
-    const res = await postData("/api/mail", {
-      name: formValue.name,
-      number: formValue.number,
-      description: formValue.description,
-    });
-
-    setIsSendng(false);
-
-    if (res.success) {
-      setModalOpen(false);
-      setIsSuccessModal(true);
-      setFormValue({
-        name: "",
-        number: "",
-        description: "",
+    //@ts-ignore
+    grecaptcha.ready(function() {
+      //@ts-ignore
+      grecaptcha.execute('6Ldp-yseAAAAALozzoVycH0j07AwW2b61MdN9n1E', {action: 'submit'}).then(async function(token) {
+        const res = await postData("/api/mail", {
+          name: formValue.name,
+          number: formValue.number,
+          description: formValue.description,
+          c_token: token
+        });
+    
+        setIsSendng(false);
+    
+        if (res.success) {
+          setModalOpen(false);
+          setIsSuccessModal(true);
+          setFormValue({
+            name: "",
+            number: "",
+            description: "",
+          });
+        } else {
+          setResponse(() => res);
+        }
       });
-    } else {
-      setResponse(() => res);
-    }
+    });
   };
 
   const onRequestBtnClick = () => {
@@ -116,6 +123,7 @@ const HomePage = () => {
         />
       </Wrapper>
       <Script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" />
+      <Script src="https://www.google.com/recaptcha/api.js?render=6Ldp-yseAAAAALozzoVycH0j07AwW2b61MdN9n1E" />
     </div>
   );
 };
