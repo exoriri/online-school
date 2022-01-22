@@ -1,8 +1,9 @@
 import React from "react";
+import Image from 'next/image';
 import styled from "styled-components";
 import Link from 'next/link';
 import { Icon } from "semantic-ui-react";
-import { Box, H1, Paragraph } from "../common";
+import { Box, H1 } from "../common";
 
 const Wrapper = styled(Box)`
   padding: 20px;
@@ -62,7 +63,7 @@ export const Contacts = () => {
         <ListItem passHref>
           <Link href="https://wa.me/796435651492" passHref>
             <WhatsappBtn>
-              <img src="/whatsapp.svg" />
+              <Image width={25} height={25} alt="whatsapp" src="/whatsapp.svg" />
               <span style={{ marginLeft: 10 }}>Whatsapp</span>
             </WhatsappBtn>
           </Link>

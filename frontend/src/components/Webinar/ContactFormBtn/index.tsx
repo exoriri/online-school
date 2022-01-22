@@ -13,7 +13,7 @@ export const StyledButton = styled(Button)`
 
 export const ContactBtn = ({ size = "large", onRequestBtnClick }) => {
   return (
-    <StyledButton size={size} primary onClick={onRequestBtnClick}>
+    <StyledButton aria-label="order-consultation" size={size} primary onClick={onRequestBtnClick}>
       Заказать консультацию
     </StyledButton>
   );

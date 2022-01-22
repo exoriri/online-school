@@ -3,6 +3,7 @@
     src: local("Lato-Bold"),
       url(../../public/fonts/Lato-Bold.ttf) format("truetype");
     font-weight: normal;
+    font-display: swap;
 } 
 
 @font-face {
@@ -10,23 +11,5 @@
     src: local("Lato-Regular"),
       url(../../public/fonts/Lato-Regular.ttf) format("truetype");
     font-weight: normal;
-}  
-
-html, body {
-    height: 100vh;
-    scroll-behavior: smooth;
-    font-family: 'LatoRegular', sans-serif !important;
-}
-
-.wrapper {
-    position: relative;
-}
-
-.text {
-    position: absolute;
-    bottom: 0;
-}
-
-.modals {
-    z-index: 9999 !important;
+    font-display: swap;
 }

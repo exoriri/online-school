@@ -1,4 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer';
 
 async function main(name, number, description) {
@@ -22,10 +21,6 @@ async function main(name, number, description) {
            <p><b>Описание: ${description}</b></p>
     `,
   });
-
-  console.log("Message sent: %s", info.messageId);
-
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 }
 
 export default async function handler(req, res) {

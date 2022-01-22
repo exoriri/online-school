@@ -1,7 +1,5 @@
-// import App from 'next/app'
-
 import 'reset-css';
-import 'semantic-ui-css/semantic.min.css'; //Allows for server-side rendering.
+import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 
 function MyApp({ Component, pageProps }) {
@@ -16,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   // MyApp.getInitialProps = async (appContext) => {
   //   // calls page's `getInitialProps` and fills `appProps.pageProps`
   //   const appProps = await App.getInitialProps(appContext);
-  //
+  
   //   return { ...appProps }
   // }
   

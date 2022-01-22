@@ -11,7 +11,3 @@ export const H2 = styled.h1`
     font-size: 30px;
     font-weight: ${props => (props.bold ? 'bold' : 'normal')};
 `;
-
-export const Paragraph = styled.p`
-    font-family: ${props => (props.bold ? 'Roboto, sans-serif;' : 'Roboto-Regular, sans-serif;')};
-`;

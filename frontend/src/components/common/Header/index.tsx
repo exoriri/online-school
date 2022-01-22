@@ -1,19 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { List, Button, Icon } from 'semantic-ui-react';
+import Image from 'next/image';
+
 import { Box } from '../../common';
 
-import { List, Button, Icon } from 'semantic-ui-react';
 
 import { ContactBtn } from '../../Webinar';
 
 import { webinarLinks } from './links';
 
 //@TODO: Remake
-
-const Image = styled.img`
-    width: ${props => props.width};
-    heigth: ${props => props.height};
-`;
 
 const StyledHeader = styled.header`
     position: sticky;
@@ -127,10 +124,10 @@ export const Links = ({ onClick }) => (
     </>
 );
 
-export const Header = ({ onRequestBtnClick }) => {
+export const Header = ({ isModalOpen, onRequestBtnClick }) => {
     const [isMobileOpened, setIsMobileOpened] = useState(false);
 
-    const handleLinkClick = (e) => {
+    const handleLinkClick = () => {
         setIsMobileOpened(false);
     };
 
@@ -138,7 +135,7 @@ export const Header = ({ onRequestBtnClick }) => {
         <>
             <StyledHeader isMobileOpened={isMobileOpened}>
                 <a href="#">
-                    <Image width={150} height={60} src={"log.png"} alt="logo" />
+                    <Image width={150} height={60} src={"/log.webp"} alt="logo" />
                 </a>
                 <HeaderLinks inverted link>
                     <Links onClick={handleLinkClick} />
@@ -146,7 +143,7 @@ export const Header = ({ onRequestBtnClick }) => {
                        onRequestBtnClick={onRequestBtnClick}
                     />
                 </HeaderLinks>
-                {!isMobileOpened ? <HamburgerButton onClick={() => { setIsMobileOpened(!isMobileOpened) }}>
+                {!isMobileOpened ? <HamburgerButton aria-label="hambuger" onClick={() => { setIsMobileOpened(!isMobileOpened) }}>
                     <HamburgerIcon size="big" name="content" />
                 </HamburgerButton> :
                     <HamburgerButton onClick={() => { setIsMobileOpened(!isMobileOpened) }}>
@@ -160,7 +157,7 @@ export const Header = ({ onRequestBtnClick }) => {
             {
                 isMobileOpened && <MobileLinks>
                     <Links onClick={handleLinkClick} />
-                    <ContactBtnListItem  onRequestBtnClick={onRequestBtnClick}/>
+                    {!isModalOpen && <ContactBtnListItem  onRequestBtnClick={onRequestBtnClick}/>}
                 </MobileLinks>
             }
 

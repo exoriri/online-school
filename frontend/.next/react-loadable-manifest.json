@@ -1,14 +1,15 @@
 {
   "../../node_modules/next/dist/client/index.js -> ../pages/_error": {
-    "id": "../../node_modules/next/dist/client/index.js -> ../pages/_error",
+    "id": 9651,
     "files": [
-      "static/chunks/node_modules_next_dist_pages__error_js.js"
+      "static/chunks/651.243d23442247d286.js"
     ]
   },
   "../components/Landing/Technologies/index.tsx -> react-owl-carousel": {
-    "id": "../components/Landing/Technologies/index.tsx -> react-owl-carousel",
+    "id": 2568,
     "files": [
-      "static/chunks/node_modules_react-owl-carousel_umd_OwlCarousel_js.js"
+      "static/chunks/b637e9a5.30b544afdd453a2b.js",
+      "static/chunks/568.fbe29473f8a33282.js"
     ]
   }
 }

@@ -1,9 +1,0 @@
-.carouselImg {
-    width: 100%;
-    height: 100% !important;
-}
-
-.carouselImgAng {
-    background: url('/slider-images/angular.png') no-repeat;
-    object-fit: cover;
-}

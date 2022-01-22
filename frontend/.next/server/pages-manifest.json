@@ -1,5 +1,9 @@
 {
   "/_app": "pages/_app.js",
+  "/api/mail": "pages/api/mail.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/ru/404": "pages/ru/404.html",
+  "/ru/500": "pages/ru/500.html",
+  "/ru": "pages/ru.html"
 }

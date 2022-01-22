@@ -2,11 +2,9 @@ import React from "react";
 import Image from 'next/image';
 import styled from "styled-components";
 
-import { Box, H1, H2, Paragraph } from "../../../components/common";
-import { List, Icon } from "semantic-ui-react";
+import { Box, H1, H2 } from "../../../components/common";
 
 import { ContactBtn, Cover } from "../";
-import { ContactForm } from "../../Landing";
 
 const Wrapper = styled(Box)`
   position: relative;
@@ -98,7 +96,7 @@ const ApplicBtn = styled(Box)`
 `;
 
 const BgImage = styled(Box)`
-  background: url(main.jpeg) center;
+  background: url(main.webp) center;
   background-size: cover;
   min-height: 100%;
   opacity: 0.3;
@@ -143,12 +141,10 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
       <DescriptionContainer>
         <Description>
           <Title>IT Решения для вашего Бизнеса.</Title>
-          <div>
             <Text>Обсуждаем</Text>
             <Text>Делаем</Text>
             <div style={{ visibility: 'hidden', height: 0 }} id="services">asdf</div>
             <Text>Запускаем</Text>
-          </div>
         </Description>
       </DescriptionContainer>
     </div>
