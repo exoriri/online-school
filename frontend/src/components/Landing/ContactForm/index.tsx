@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from 'styled-components';
 import { TextArea, Form, Message } from "semantic-ui-react";
 import { CoverTitle } from "../../Webinar/Cover";

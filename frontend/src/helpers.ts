@@ -6,5 +6,7 @@ export function reCaptchaOnFocus() {
     head.appendChild(script);
     // remove focus to avoid js error:
     document.getElementById('contactForm').removeEventListener('click', reCaptchaOnFocus);
-    document.getElementById('modalForm') && document.getElementById('modalForm').removeEventListener('click', reCaptchaOnFocus);
+    Array.from(document.getElementsByClassName('contactBtn')).forEach(btn => {
+        btn.removeEventListener('click', reCaptchaOnFocus);
+    });
 };

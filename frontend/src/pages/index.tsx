@@ -93,11 +93,10 @@ const HomePage = () => {
 
   useEffect(() => {
     document.getElementById('contactForm').addEventListener('click', reCaptchaOnFocus);
+    Array.from(document.getElementsByClassName('contactBtn')).forEach(btn => {
+      btn.addEventListener('click', reCaptchaOnFocus);
+    });
   },[]);
-
-  // if (isModalOpen) {
-  //   document.getElementById('modalForm').addEventListener('focus', reCaptchaOnFocus);
-  // }
 
   return (
     <>
