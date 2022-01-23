@@ -4,16 +4,13 @@ async function main(name, number, description) {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     requireTLS: false,
-    secure: true,
+    secure: false,
     port: 465,
     service: "Gmail",
     auth: {
       user: "romchikacc@gmail.com",
       pass: "R2#uotochuvak19977",
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
+    }
   });
 
   await new Promise((resolve, reject) => {
