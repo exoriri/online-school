@@ -12,7 +12,6 @@ async function main(name, number, description) {
       pass: "R2#uotochuvak19977",
     },
     tls: {
-      // do not fail on invalid certs
       rejectUnauthorized: false,
     },
   });
