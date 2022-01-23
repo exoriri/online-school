@@ -9,7 +9,7 @@ async function main(name, number, description) {
     service: "Gmail",
     auth: {
       user: "romchikacc@gmail.com",
-      pass: "R2#uotochuvak19977",
+      pass: "izmmbwvynbbbqgle",
     }
   });
 
