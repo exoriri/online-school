@@ -4,7 +4,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 module.exports = withBundleAnalyzer({
-  istDir: 'build',
   experimental: {
     // ssr and displayName are configured by default
     styledComponents: true,
