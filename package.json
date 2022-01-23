@@ -29,7 +29,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "deploy": "vercel --prod",
     "analyze:browser": "cross-env ANALYZE=true next build"
   },
