@@ -6,7 +6,7 @@ async function main(name, number, description) {
     requireTLS: false,
     secure: true,
     port: 465,
-    service: 'Gmail',
+    service: "Gmail",
     auth: {
       user: "romchikacc@gmail.com",
       pass: "R2#uotochuvak19977",
@@ -16,15 +16,43 @@ async function main(name, number, description) {
       rejectUnauthorized: false,
     },
   });
-  let info = await transporter.sendMail({
-    from: '"Essential skills " <foo@example.com>',
-    to: "essentialskills2@gmail.com",
-    subject: "Новый ученик 👻",
-    text: "Новый ученик 👻",
-    html: `<p><b>Имя: ${name}</b></p>
+
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
+  });
+
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(
+      {
+        from: '"Essential skills " <foo@example.com>',
+        to: "essentialskills2@gmail.com",
+        subject: "Новая завка 👻",
+        text: "Новая завка 👻",
+        html: `<p><b>Имя: ${name}</b></p>
            <p><b>Номер или аккаунт: ${number}</b></p>
            <p><b>Описание: ${description}</b></p>
     `,
+      },
+      (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      }
+    );
   });
 }
 
@@ -46,7 +74,7 @@ export default async function handler(req, res) {
         }
       );
       captchaResponse = await captchaResponse.json();
-  
+
       if (!captchaResponse.success) {
         res.end(
           JSON.stringify({
@@ -55,7 +83,7 @@ export default async function handler(req, res) {
           })
         );
       }
-  
+
       if (name !== "" && number !== "" && description !== "") {
         await main(name, number, description);
         res.end(
@@ -72,7 +100,7 @@ export default async function handler(req, res) {
           })
         );
       }
-    } catch(e) {
+    } catch (e) {
       res.end(
         JSON.stringify({
           success: false,
@@ -80,6 +108,5 @@ export default async function handler(req, res) {
         })
       );
     }
-
   }
 }
