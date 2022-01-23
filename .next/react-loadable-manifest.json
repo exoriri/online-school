@@ -1,0 +1,14 @@
+{
+  "../../node_modules/next/dist/client/index.js -> ../pages/_error": {
+    "id": "../../node_modules/next/dist/client/index.js -> ../pages/_error",
+    "files": [
+      "static/chunks/node_modules_next_dist_pages__error_js.js"
+    ]
+  },
+  "../components/Landing/Technologies/index.tsx -> react-owl-carousel": {
+    "id": "../components/Landing/Technologies/index.tsx -> react-owl-carousel",
+    "files": [
+      "static/chunks/node_modules_react-owl-carousel_umd_OwlCarousel_js.js"
+    ]
+  }
+}
