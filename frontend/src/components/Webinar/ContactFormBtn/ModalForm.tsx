@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Box } from '../../common';
 import { 
   Button, 
   Header, 
@@ -10,6 +9,8 @@ import {
   Message,
   TextArea
 } from 'semantic-ui-react';
+import { Box } from '../../common';
+import {reCaptchaOnFocus} from '../../../helpers';
 
 const StyledModal = styled(Modal)`
   @media screen and (min-width: 768px) {
@@ -60,7 +61,7 @@ export const ModalForm = ({
     >
       <Header content='Оставьте свои контактные данные и мы с вами свяжемся &#x1f60a;' />
       <Modal.Content>
-        <Form>
+        <Form id="modalForm">
           <Form.Field>
             <label>Ваше полное имя (ФИО)</label>
             <input required value={name} onChange={handleChange} name="name" placeholder='ФИО' />

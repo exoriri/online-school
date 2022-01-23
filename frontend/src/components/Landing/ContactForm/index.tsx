@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { TextArea, Form, Message } from "semantic-ui-react";
 import { CoverTitle } from "../../Webinar/Cover";
 import { StyledButton } from '../../Webinar/ContactFormBtn';
+import {reCaptchaOnFocus} from '../../../helpers';
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -38,7 +39,7 @@ export const ContactForm = (
   return (
     <Wrapper>
       <CoverTitle>Свяжитесь с нами для бесплатной консультации</CoverTitle>
-      <StyledForm inverted>
+      <StyledForm id="contactForm" inverted>
           <Form.Field>
             <Form.Input 
               name="name" 

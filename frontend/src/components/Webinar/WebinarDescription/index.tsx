@@ -143,7 +143,7 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
           <Title>IT Решения для вашего Бизнеса.</Title>
             <Text>Обсуждаем</Text>
             <Text>Делаем</Text>
-            <div style={{ visibility: 'hidden', height: 0 }} id="services">asdf</div>
+            <div style={{ visibility: 'hidden', height: 0 }} id="services">df</div>
             <Text>Запускаем</Text>
         </Description>
       </DescriptionContainer>
