@@ -3,12 +3,16 @@ import nodemailer from "nodemailer";
 async function main(name, number, description) {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
     requireTLS: false,
-    secure: true,
+    secure: false,
+    service: 'Gmail',
     auth: {
       user: "romchikacc@gmail.com",
       pass: "R2#uotochuvak19977",
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
     },
   });
   let info = await transporter.sendMail({
