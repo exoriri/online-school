@@ -39,7 +39,7 @@ export const ContactForm = (
   return (
     <Wrapper>
       <CoverTitle>Свяжитесь с нами для бесплатной консультации</CoverTitle>
-      <StyledForm id="contactForm" inverted>
+      <StyledForm id="contactForm" inverted> 
           <Form.Field>
             <Form.Input 
               name="name" 
