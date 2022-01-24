@@ -1,5 +1,6 @@
 import React from "react";
-import Image from 'next/image';
+import Image from "next/image";
+import { Step, Icon } from "semantic-ui-react";
 import styled from "styled-components";
 
 import { Box, H1, H2 } from "../../../components/common";
@@ -13,15 +14,11 @@ const Wrapper = styled(Box)`
 `;
 
 const Description = styled(Box)`
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin: 0 auto;
-  padding-bottom: 20px;
-  max-width: 650px;
-  min-width: 340px;
-
-  @media screen and (min-width: 1024px) {
-    max-width: 650px;
-  }
 `;
 
 const Service = styled(Box)`
@@ -63,6 +60,7 @@ const Title = styled(H1)`
 
   @media screen and (min-width: 1024px) {
     font-size: 36px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -85,7 +83,7 @@ const ApplicBtn = styled(Box)`
   width: 90%;
   margin: 0 auto;
   margin-top: 10px;
-  
+
   @media screen and (min-width: 500px) {
     width: 66%;
   }
@@ -96,17 +94,17 @@ const ApplicBtn = styled(Box)`
 `;
 
 const BgImage = styled(Box)`
-  background: url(main.webp) center;
-  background-size: cover;
-  min-height: 100%;
-  opacity: 0.3;
-`;
-
-const DescriptionContainer = styled(Box)`
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 500px;
+  left: 0;
+  top: 0;
+  opacity: 0.3;
+  z-index: 50;
+
+  @media screen and (min-width: 1024px) {
+    height: 300px;
+  }
 `;
 
 const FeaturesList = styled(Box)`
@@ -134,34 +132,102 @@ const ServiceWrapper = styled.div`
   }
 `;
 
+const Main = styled.div`
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 1024px) {
+    height: 300px;
+  }
+`;
+
+const DescriptionText = styled(Text)`
+  margin-top: 10px;
+`;
+
+const DescriptionAction = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 50px;
+    margin-bottom: 0px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+const CenterAligned = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+`;
+
 export const WebinarDescription = ({ onRequestBtnClick }) => (
   <Wrapper>
-    <div style={{ height:300, position: "relative" }}>
-      <BgImage />
-      <DescriptionContainer>
-        <Description>
-          <Title>IT Решения для вашего Бизнеса.</Title>
-            <Text>Обсуждаем</Text>
-            <Text>Делаем</Text>
-            <div style={{ visibility: 'hidden', height: 0 }} id="services">df</div>
-            <Text>Запускаем</Text>
-        </Description>
-      </DescriptionContainer>
-    </div>
+    <Main>
+      <Description>
+        <Title>IT Решения для вашего Бизнеса</Title>
+
+        <CenterAligned>
+          <DescriptionAction>
+            <Icon color={'blue'} inverted size="huge" name="comments" />
+            <DescriptionText>Обсуждаем</DescriptionText>
+          </DescriptionAction>
+          <DescriptionAction>
+            <Icon color="olive" inverted size="huge" name="cogs" />
+            <DescriptionText>Делаем</DescriptionText>
+          </DescriptionAction>
+          <DescriptionAction>
+            <Icon color="red" inverted size="huge" name="rocket" />
+            <DescriptionText>Запускаем</DescriptionText>
+          </DescriptionAction>
+        </CenterAligned>
+      </Description>
+      <BgImage>
+        <Image objectFit={"cover"} layout="fill" src="/main.webp" />
+      </BgImage>
+    </Main>
 
     <Cover text="Мы делаем" />
     <FeaturesList>
       <ServiceWrapper>
         <Service>
           <ServiceTitle>Мобильные приложения</ServiceTitle>
-          <Image alt="smartphone" width={64} height={64} src="/services-images/development.png" />
+          <Image
+            alt="smartphone"
+            width={64}
+            height={64}
+            src="/services-images/development.png"
+          />
           <Text>
             Cоздаем приложения для всех платформ: Android, iOS, AppGallery​
           </Text>
         </Service>
         <Service>
           <ServiceTitle>Интернет Магазины</ServiceTitle>
-          <Image alt="store" width={64} height={64} src="/services-images/store.png" />
+          <Image
+            alt="store"
+            width={64}
+            height={64}
+            src="/services-images/store.png"
+          />
           <Text>
             Создаем фирменный дизайн, интегрируем платежные системы и отправляем
             сайт в production 🚀​
@@ -173,21 +239,35 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
       <ServiceWrapper>
         <Service>
           <ServiceTitle>WEB - ПРИЛОЖЕНИЯ​</ServiceTitle>
-          <Image alt="web" width={64} height={64} src="/services-images/web.png" />
+          <Image
+            alt="web"
+            width={64}
+            height={64}
+            src="/services-images/web.png"
+          />
           <Text>
             Делаем административные панели, интегрируем сторонние сервисы.​​
           </Text>
         </Service>
         <Service>
           <ServiceTitle>LANDING-PAGES​</ServiceTitle>
-          <Image alt="landing" width={64} height={64} src="/services-images/landing.png" />
-          <Text>Сайты, которые привлекают: клиентов, сотрудников, любовников.​​​</Text>
+          <Image
+            alt="landing"
+            width={64}
+            height={64}
+            src="/services-images/landing.png"
+          />
+          <Text>
+            Сайты, которые привлекают: клиентов, сотрудников, любовников.​​​
+          </Text>
         </Service>
       </ServiceWrapper>
     </FeaturesList>
     <ApplicBtn>
-      <ContactBtn onRequestBtnClick={onRequestBtnClick} size={'huge'} />
-      <div style={{ visibility: 'hidden' }} id="technologies">asdf</div>
+      <ContactBtn onRequestBtnClick={onRequestBtnClick} size={"huge"} />
+      <div style={{ visibility: "hidden" }} id="technologies">
+        asdf
+      </div>
     </ApplicBtn>
   </Wrapper>
 );
