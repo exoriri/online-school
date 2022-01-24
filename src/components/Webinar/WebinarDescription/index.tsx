@@ -96,7 +96,7 @@ const ApplicBtn = styled(Box)`
 const BgImage = styled(Box)`
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 600px;
   left: 0;
   top: 0;
   opacity: 0.3;
@@ -133,7 +133,7 @@ const ServiceWrapper = styled.div`
 `;
 
 const Main = styled.div`
-  height: 500px;
+  height: 600px;
   width: 100%;
   display: flex;
   flex-direction: column;
