@@ -61,7 +61,7 @@ export const Contacts = () => {
           </a>
         </ListItem>
         <ListItem passHref>
-          <Link href="https://wa.me/796435651492" passHref>
+          <Link href="https://wa.me/79643651492" passHref>
             <WhatsappBtn>
               <Image width={25} height={25} alt="whatsapp" src="/whatsapp.svg" />
               <span style={{ marginLeft: 10 }}>Whatsapp</span>
