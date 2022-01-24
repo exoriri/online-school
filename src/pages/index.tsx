@@ -106,7 +106,7 @@ const HomePage = () => {
         </title>
         <meta
           name="description"
-          content="Мобильные приложения, интернет магазины, веб приложения, лэндинги и маркетинг. Создать сайт. Веб студия."
+          content="Разрабатываем мобильные приложения, веб-приложения, интернет магазины, лэндинги и автоматизацию для вашего бизнеса. Переносим идеи из головы в виртуальное пространство"
         />
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
         <meta name="google" content="notranslate" key="notranslate" />
