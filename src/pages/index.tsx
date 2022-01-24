@@ -16,8 +16,8 @@ import {reCaptchaOnFocus} from '../helpers';
 
 const Wrapper = styled(Box)`
   height: 100vh;
-  background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 100%);
+  background-color: #000;
+  background-image: linear-gradient(147deg, #000 0%, #2c3e50 100%);
   overflow: auto;
   ::-webkit-scrollbar {
     display: none;
