@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Step, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
 
 import { Box, H1, H2 } from "../../../components/common";
@@ -188,11 +188,15 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
         <CenterAligned>
           <DescriptionAction>
             <Icon color={'blue'} inverted size="huge" name="comments" />
-            <DescriptionText>Обсуждаем</DescriptionText>
+            <DescriptionText>Обсуждаем проект</DescriptionText>
+          </DescriptionAction>
+          <DescriptionAction>
+            <Icon color="violet" inverted size="huge" name="pencil alternate" />
+            <DescriptionText>Делаем дизайн</DescriptionText>
           </DescriptionAction>
           <DescriptionAction>
             <Icon color="olive" inverted size="huge" name="cogs" />
-            <DescriptionText>Делаем</DescriptionText>
+            <DescriptionText>Разрабатываем</DescriptionText>
           </DescriptionAction>
           <DescriptionAction>
             <Icon color="red" inverted size="huge" name="rocket" />
