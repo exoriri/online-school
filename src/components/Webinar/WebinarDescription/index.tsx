@@ -179,12 +179,11 @@ const CenterAligned = styled.div`
   }
 `;
 
-export const WebinarDescription = ({ onRequestBtnClick }) => (
+export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
   <Wrapper>
-    <Main>
+    <Main id="services">
       <Description>
         <Title>IT Решения для вашего Бизнеса</Title>
-
         <CenterAligned>
           <DescriptionAction>
             <Icon color={'blue'} inverted size="huge" name="comments" />
@@ -204,13 +203,14 @@ export const WebinarDescription = ({ onRequestBtnClick }) => (
           </DescriptionAction>
         </CenterAligned>
       </Description>
-      <div id="#services">asdf</div>
       <BgImage>
-        <Image objectFit={"cover"} layout="fill" src="/main.webp" />
+        <Image alt="space" objectFit={"cover"} layout="fill" src="/main.webp" />
       </BgImage>
     </Main>
 
-    <Cover text="Мы делаем" />
+    <div ref={scrollRef}>
+      <Cover text="Мы делаем" />
+    </div>
     <FeaturesList>
       <ServiceWrapper>
         <Service>

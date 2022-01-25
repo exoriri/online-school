@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Icon } from "semantic-ui-react";
 import { Box, H1 } from "../common";
 
-const Wrapper = styled(Box)`
+const Wrapper = styled.div`
   padding: 20px;
   background: #062433;
   color: #fff;
@@ -46,9 +46,9 @@ const WhatsappBtn = styled.a`
   }
 `;
 
-export const Contacts = () => {
+export const Contacts = ({ scrollRef }) => {
   return (
-    <Wrapper id="contacts">
+    <Wrapper id="contacts" ref={scrollRef}>
       <Title>Контакты</Title>
       <ListIcons>
         <ListItem>

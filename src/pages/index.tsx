@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -12,7 +12,7 @@ import {
 } from "../components/Webinar";
 import { postData } from "../client";
 
-import {reCaptchaOnFocus} from '../helpers';
+import { reCaptchaOnFocus } from "../helpers";
 
 const Wrapper = styled(Box)`
   height: 100vh;
@@ -30,6 +30,10 @@ const INITIAL_RESPONSE = {
 };
 
 const HomePage = () => {
+  const servicesRef = useRef(null);
+  const technologiesRef = useRef(null);
+  const contactsRef = useRef(null);
+  const headerRef = useRef(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isSending, setIsSendng] = useState(false);
   const [response, setResponse] = useState(INITIAL_RESPONSE);
@@ -39,6 +43,21 @@ const HomePage = () => {
     number: "",
     description: "",
   });
+  const [links, setLinks] = useState([]);
+
+  const onLinkClick = (el) => () => {
+    if (typeof window !== "undefined") {
+      const headerHeight = headerRef.current?.offsetHeight;
+      console.log(el.getBoundingClientRect().top - headerHeight);
+      el.scrollIntoView({
+          y: el.getBoundingClientRect().top - 100,
+          x: 0,
+          behavior: 'smooth'
+        });
+    };
+  };
+
+
 
   const handleSuccessModalClose = () => {
     setIsSuccessModal(false);
@@ -92,11 +111,33 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    document.getElementById('contactForm').addEventListener('click', reCaptchaOnFocus);
-    Array.from(document.getElementsByClassName('contactBtn')).forEach(btn => {
-      btn.addEventListener('click', reCaptchaOnFocus);
+    document
+      .getElementById("contactForm")
+      .addEventListener("click", reCaptchaOnFocus);
+    Array.from(document.getElementsByClassName("contactBtn")).forEach((btn) => {
+      btn.addEventListener("click", reCaptchaOnFocus);
     });
-  },[]);
+    setLinks([
+      {
+        id: 1,
+        title: "Услуги",
+        href: "#services",
+        onClick: onLinkClick(servicesRef.current)
+      },
+      {
+        id: 2,
+        title: "Технологии",
+        href: "#technologies",
+        onClick: onLinkClick(technologiesRef.current)
+      },
+      {
+        id: 3,
+        title: "Контакты",
+        href: "#contacts",
+        onClick: onLinkClick(contactsRef.current)
+      },
+    ]);
+  }, []);
 
   return (
     <>
@@ -111,13 +152,23 @@ const HomePage = () => {
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
         <meta name="google" content="notranslate" key="notranslate" />
         <meta name="robots" content="all" />
-        <link rel="preload" href={'/main.webp'} as="image" />
+        <link rel="preload" href={"/main.webp"} as="image" />
         <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <Wrapper>
-        <Header isModalOpen={isModalOpen} onRequestBtnClick={onRequestBtnClick} />
-        <WebinarDescription onRequestBtnClick={onRequestBtnClick} />
-        <Technologies />
+        <Header
+          links={links}
+          headerRef={headerRef}
+          isModalOpen={isModalOpen}
+          onRequestBtnClick={onRequestBtnClick}
+        />
+        <WebinarDescription 
+          scrollRef={servicesRef}
+          onRequestBtnClick={onRequestBtnClick} 
+        />
+        <Technologies 
+          scrollRef={technologiesRef}
+        />
         <ContactForm
           name={formValue.name}
           number={formValue.number}
@@ -127,7 +178,9 @@ const HomePage = () => {
           handleChange={handleChange}
           onSend={onSend}
         />
-        <Contacts />
+        <Contacts 
+          scrollRef={contactsRef}
+        />
         <ModalFormSuccess
           handleClose={handleSuccessModalClose}
           open={isSuccessModal}
