@@ -30,8 +30,8 @@ async function main(name, number, description) {
     // send mail
     transporter.sendMail(
       {
-        from: '"Essential skills " <foo@example.com>',
-        to: "essentialskills2@gmail.com",
+        from: 'MozaicaStruction" <foo@example.com>',
+        to: "mozaicstruction@gmail.com",
         subject: "Новая завка 👻",
         text: "Новая завка 👻",
         html: `<p><b>Имя: ${name}</b></p>
@@ -60,7 +60,7 @@ export default async function handler(req, res) {
 
     try {
       let captchaResponse: any = await fetch(
-        `https://www.google.com/recaptcha/api/siteverify?secret=6Ldp-yseAAAAAG3JYpazb4cdJ_YT-Aqy2aJTRc8n&response=${c_token}`,
+        `https://www.google.com/recaptcha/api/siteverify?secret=6LczXzgeAAAAAKciOFc2TNKM1SNQrXYToRLmP7Dy&response=${c_token}`,
         {
           method: "POST",
           headers: {

@@ -3,7 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 
 import { Header, Box } from "../components/common";
-import { Technologies, ContactForm } from "../components/Landing";
+import { Technologies, ContactForm, Portfolio } from "../components/Landing";
 import {
   WebinarDescription,
   Contacts,
@@ -29,6 +29,7 @@ const HomePage = () => {
   const technologiesRef = useRef(null);
   const contactsRef = useRef(null);
   const headerRef = useRef(null);
+  const portfolioRef = useRef(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isSending, setIsSendng] = useState(false);
   const [response, setResponse] = useState(INITIAL_RESPONSE);
@@ -70,7 +71,7 @@ const HomePage = () => {
     grecaptcha.ready(function () {
       //@ts-ignore
       grecaptcha
-        .execute("6Ldp-yseAAAAALozzoVycH0j07AwW2b61MdN9n1E", {
+        .execute("6LczXzgeAAAAANJ-LyxE2pZb-73d-OY2XSMNtYfc", {
           action: "submit",
         })
         .then(async function (token) {
@@ -119,16 +120,22 @@ const HomePage = () => {
       },
       {
         id: 2,
+        title: "Портфолио",
+        href: '#portfolio',
+        onClick: onLinkClick(portfolioRef.current)
+      },
+      {
+        id: 3,
         title: "Технологии",
         href: "#technologies",
         onClick: onLinkClick(technologiesRef.current)
       },
       {
-        id: 3,
+        id: 4,
         title: "Контакты",
         href: "#contacts",
         onClick: onLinkClick(contactsRef.current)
-      },
+      }
     ]);
   }, []);
 
@@ -159,6 +166,7 @@ const HomePage = () => {
           scrollRef={servicesRef}
           onRequestBtnClick={onRequestBtnClick} 
         />
+        <Portfolio scrollRef={portfolioRef} />
         <Technologies 
           scrollRef={technologiesRef}
         />

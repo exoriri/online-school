@@ -149,5 +149,3 @@ export const Technologies = ({ scrollRef }) => {
     </div>
   );
 };
-
-export default Technologies;
