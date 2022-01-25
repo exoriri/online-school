@@ -137,7 +137,7 @@ export const Header = ({ isModalOpen, onRequestBtnClick, headerRef , links=[] })
     <>
       <StyledHeader ref={headerRef}>
         <a href="#">
-          <Image width={150} height={60} src={"/log.webp"} alt="logo" />
+          <Image width={150} height={60} src={"/logo.svg"} alt="logo" />
         </a>
         <HeaderLinks inverted link>
             <Links setIsMobileOpened={setIsMobileOpened} links={links} />
