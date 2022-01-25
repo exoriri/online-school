@@ -4,7 +4,7 @@
       url(../../public/fonts/Lato-Bold.ttf) format("truetype");
     font-weight: normal;
     font-display: swap;
-} 
+}; 
 
 @font-face {
     font-family: "LatoRegular";
@@ -12,4 +12,4 @@
       url(../../public/fonts/Lato-Regular.ttf) format("truetype");
     font-weight: normal;
     font-display: swap;
-}
+};

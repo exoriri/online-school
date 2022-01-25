@@ -15,13 +15,8 @@ import { postData } from "../client";
 import { reCaptchaOnFocus } from "../helpers";
 
 const Wrapper = styled(Box)`
-  height: 100vh;
   background-color: #000;
   background-image: linear-gradient(147deg, #000 0%, #2c3e50 100%);
-  overflow: auto;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 const INITIAL_RESPONSE = {
@@ -48,12 +43,10 @@ const HomePage = () => {
   const onLinkClick = (el) => () => {
     if (typeof window !== "undefined") {
       const headerHeight = headerRef.current?.offsetHeight;
-      console.log(el.getBoundingClientRect().top - headerHeight);
-      el.scrollIntoView({
-          y: el.getBoundingClientRect().top - 100,
-          x: 0,
-          behavior: 'smooth'
-        });
+      window.scrollBy({
+        top: el.getBoundingClientRect().y - headerHeight,
+        behavior: 'smooth'
+      });
     };
   };
 
