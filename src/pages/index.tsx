@@ -138,6 +138,14 @@ const HomePage = () => {
         onClick: onLinkClick(contactsRef.current)
       }
     ]);
+    //@ts-ignore
+    window.dataLayer = window.dataLayer || [];
+      //@ts-ignore
+    function gtag(){dataLayer.push(arguments);}    
+    //@ts-ignore
+    gtag('js', new Date());
+    //@ts-ignore
+    gtag('config', 'UA-218433606-1');
   }, []);
 
   return (
@@ -200,7 +208,7 @@ const HomePage = () => {
           response={response}
         />
       </Wrapper>
-      <Script defer src="https://www.googletagmanager.com/gtag/js?id=G-8G1JMHDJFL" />
+      <Script defer src="https://www.googletagmanager.com/gtag/js?id=UA-218433606-1" />
     </>
   );
 };
