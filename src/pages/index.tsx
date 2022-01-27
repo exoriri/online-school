@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import Script from 'next/script';
 import styled from "styled-components";
 
 import { Header, Box } from "../components/common";
@@ -137,15 +138,6 @@ const HomePage = () => {
         onClick: onLinkClick(contactsRef.current)
       }
     ]);
-
-    //@ts-ignore
-    window.dataLayer = window.dataLayer || [];
-    //@ts-ignore
-    function gtag(){window.dataLayer.push(arguments);}
-    //@ts-ignore
-    gtag('js', new Date());
-    //@ts-ignore
-    gtag('config', 'G-8G1JMHDJFL');
   }, []);
 
   return (
@@ -161,7 +153,6 @@ const HomePage = () => {
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
         <meta name="google" content="notranslate" key="notranslate" />
         <meta name="robots" content="all" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G1JMHDJFL"></script>
         <link rel="preload" href={"/main.webp"} as="image" />
         <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
@@ -209,6 +200,7 @@ const HomePage = () => {
           response={response}
         />
       </Wrapper>
+      <Script defer src="https://www.googletagmanager.com/gtag/js?id=G-8G1JMHDJFL" />
     </>
   );
 };
