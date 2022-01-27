@@ -204,7 +204,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
         </CenterAligned>
       </Description>
       <BgImage>
-        <Image alt="space" objectFit={"cover"} layout="fill" src="/main.webp" />
+        <Image alt="space" priority objectFit={"cover"} layout="fill" src="/main.webp" />
       </BgImage>
     </Main>
 

@@ -68,7 +68,7 @@ const DescriptionProject = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
-  transition: opacity .7s;
+  transition: opacity .8s;
   overflow:hidden;
 
   @media screen and (min-width: 950px) {
@@ -109,25 +109,25 @@ const portfolio: Array<{ id: number, title: string; src: string, url: string | n
   {
     id: 1,
     title: "Мобильное приложение для поиска авиабилетов и отелей",
-    src: "/t7-travel.png",
+    src: "/t7-travel.webp",
     url: "https://exoriri.github.io/T7-contact/",
   },
   {
     id: 2,
     title: "Сайт для государственной поликлиники",
-    src: "/ragc.png",
+    src: "/ragc.webp",
     url: "https://www.ragc.kz/",
   },
   {
     id: 3,
     title: "Сервис c регистрацией магазинов в ТЦ и панелью управления",
-    src: "/prenato.png",
+    src: "/prenato.webp",
     url: 'https://www.prenotabergamo.it/'
   },
   {
     id: 4,
     title: "Интеграция платежной системы в мобильное приложение",
-    src: "/perfectly-pressed.png",
+    src: "/perfectly-pressed.webp",
     url: 'https://apps.apple.com/ru/app/perfectly-pressed/id1539134468'
   },
 ];
@@ -167,7 +167,7 @@ export const Portfolio = ({ scrollRef }) => {
   } 
   return (
     <div ref={scrollRef}>
-    <Cover text="Мы используем" />
+    <Cover text="Наши работы" />
     <StyledPortfolioWrapper >
       <Main>
         <Description>
