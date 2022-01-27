@@ -93,7 +93,7 @@ const ApplicBtn = styled(Box)`
   }
 `;
 
-const BgImage = styled(Box)`
+const BgImage = styled.div`
   position: absolute;
   width: 100%;
   height: 600px;

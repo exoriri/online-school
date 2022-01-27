@@ -77,11 +77,11 @@ const ContactBtnListItem = styled(ContactBtn)`
 `;
 
 const MobileLinks = styled.ul`
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 8888;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
 
@@ -120,6 +120,7 @@ export const Links = ({ setIsMobileOpened, links }) => (
           onClick={(e) => {
             e.preventDefault();
             link.onClick();
+            document.body.style.overflow = "auto";
             setIsMobileOpened(false);
           }}
           href={link.href}
@@ -131,7 +132,12 @@ export const Links = ({ setIsMobileOpened, links }) => (
   </>
 );
 
-export const Header = ({ isModalOpen, onRequestBtnClick, headerRef , links=[] }) => {
+export const Header = ({
+  isModalOpen,
+  onRequestBtnClick,
+  headerRef,
+  links = [],
+}) => {
   const [isMobileOpened, setIsMobileOpened] = useState(false);
   return (
     <>
@@ -140,14 +146,15 @@ export const Header = ({ isModalOpen, onRequestBtnClick, headerRef , links=[] })
           <Image width={150} height={60} src={"/logo.svg"} alt="logo" />
         </a>
         <HeaderLinks inverted link>
-            <Links setIsMobileOpened={setIsMobileOpened} links={links} />
+          <Links setIsMobileOpened={setIsMobileOpened} links={links} />
           <ContactBtnListItem onRequestBtnClick={onRequestBtnClick} />
         </HeaderLinks>
         {!isMobileOpened ? (
           <HamburgerButton
             aria-label="hambuger"
             onClick={() => {
-              setIsMobileOpened(!isMobileOpened);
+                document.body.style.overflow = "hidden";
+                setIsMobileOpened(!isMobileOpened);
             }}
           >
             <HamburgerIcon size="big" name="content" />
@@ -155,6 +162,7 @@ export const Header = ({ isModalOpen, onRequestBtnClick, headerRef , links=[] })
         ) : (
           <HamburgerButton
             onClick={() => {
+              document.body.style.overflow = "auto";
               setIsMobileOpened(!isMobileOpened);
             }}
           >
@@ -165,10 +173,11 @@ export const Header = ({ isModalOpen, onRequestBtnClick, headerRef , links=[] })
       <MobileMenu isMenuOpened={isMobileOpened} />
       {isMobileOpened && (
         <MobileLinks>
-          <Links setIsMobileOpened={setIsMobileOpened} links={links} />
-          {/* <Links onClick={handleLinkClick} /> */}
           {!isModalOpen && (
-            <ContactBtnListItem onRequestBtnClick={onRequestBtnClick} />
+            <>
+              <Links setIsMobileOpened={setIsMobileOpened} links={links} />
+              <ContactBtnListItem onRequestBtnClick={onRequestBtnClick} />
+            </>
           )}
         </MobileLinks>
       )}

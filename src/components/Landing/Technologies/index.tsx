@@ -9,7 +9,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), { ssr: false });
 
 export const Technologies = ({ scrollRef }) => {
   return (
-    <div ref={scrollRef} style={{ marginTop: 20 }}>
+    <div ref={scrollRef}>
       <Cover text="Мы используем" />
       <div style={{ backgroundColor: "#fff", padding: 10 }}>
         <OwlCarousel
