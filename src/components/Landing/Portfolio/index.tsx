@@ -68,7 +68,7 @@ const DescriptionProject = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
-  transition: all .5s;
+  transition: opacity .7s;
   overflow:hidden;
 
   @media screen and (min-width: 950px) {

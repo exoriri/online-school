@@ -270,9 +270,6 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
     </FeaturesList>
     <ApplicBtn>
       <ContactBtn onRequestBtnClick={onRequestBtnClick} size={"huge"} />
-      <div style={{ visibility: "hidden" }} id="technologies">
-        asdf
-      </div>
     </ApplicBtn>
   </Wrapper>
 );
