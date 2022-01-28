@@ -23,15 +23,21 @@ const Description = styled(Box)`
 
 const Service = styled(Box)`
   padding: 20px;
-  border: 1px solid #777777;
   flex-direction: column;
   width: 100%;
   flex: 1;
   height: 100%;
   text-align: center;
+  transition: all .3s;
+  box-shadow: 0px 0px 5px 1px #888888;
+
 
   &:first-child {
     margin-bottom: 20px;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 5px 5px #ff995f;
   }
 
   @media screen and (min-width: 1024px) {
