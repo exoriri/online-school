@@ -12,7 +12,6 @@ export const Technologies = ({ scrollRef }) => {
     <div ref={scrollRef}>
       <Cover text="Мы используем" />
       <div style={{ backgroundColor: "#fff", padding: 10 }}>
-        <div data-aos="fade-left" data-aos-duration="600">
         <OwlCarousel
           responsive={{
             "300": { items: 2 },
@@ -146,8 +145,6 @@ export const Technologies = ({ scrollRef }) => {
             />
           </div>
         </OwlCarousel>
-        </div>
-
       </div>
     </div>
   );

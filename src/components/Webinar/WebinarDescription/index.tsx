@@ -224,7 +224,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
     </div>
     <FeaturesList>
       <ServiceWrapper>
-        <Service data-aos="fade-down" data-aos-duration="800">
+        <Service data-aos="fade-up" data-aos-duration="800">
           <ServiceTitle>Мобильные приложения</ServiceTitle>
           <Image
             alt="smartphone"
@@ -237,7 +237,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
           </Text>
         </Service>
         <Service 
-          data-aos="fade-down" data-aos-duration="800"
+          data-aos="fade-up" data-aos-duration="800"
         >
           <ServiceTitle>Интернет Магазины</ServiceTitle>
           <Image
