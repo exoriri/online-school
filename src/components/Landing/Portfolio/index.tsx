@@ -168,7 +168,7 @@ export const Portfolio = ({ scrollRef }) => {
   return (
     <div ref={scrollRef}>
     <Cover text="Наши работы" />
-    <StyledPortfolioWrapper >
+    <StyledPortfolioWrapper>
       <Main>
         <Description>
           <DescriptionProjectWrapper>
@@ -177,7 +177,7 @@ export const Portfolio = ({ scrollRef }) => {
             </ArrowBtn>
             {portfolio.map(project => {
               return (
-                <DescriptionProject style={getVisiblityStyles(project.id)} key={project.id}>
+                <DescriptionProject data-aos="fade-right" data-aos-duration="800" style={getVisiblityStyles(project.id)} key={project.id}>
                 <DescriptionText>
                   <DesctiprionTitle style={{ color: "#fff" }}>
                     {project.title}

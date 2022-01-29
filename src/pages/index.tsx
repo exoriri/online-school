@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Script from 'next/script';
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 import { Header, Box } from "../components/common";
 import { Technologies, ContactForm, Portfolio } from "../components/Landing";
@@ -146,6 +148,7 @@ const HomePage = () => {
     gtag('js', new Date());
     //@ts-ignore
     gtag('config', 'UA-218433606-1');
+    AOS.init();
   }, []);
 
   return (

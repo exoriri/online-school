@@ -38,7 +38,8 @@ export const ContactForm = (
   return (
     <Wrapper>
       <CoverTitle>Свяжитесь с нами для бесплатной консультации</CoverTitle>
-      <StyledForm id="contactForm" inverted> 
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} data-aos-duration="800" data-aos="zoom-in-up">
+    <StyledForm id="contactForm" inverted> 
           <Form.Field>
             <Form.Input 
               name="name" 
@@ -77,6 +78,8 @@ export const ContactForm = (
           Отправить
         </FormButton>
       </StyledForm>
+    </div>
+
     </Wrapper>
   );
 };

@@ -21,16 +21,15 @@ const Description = styled(Box)`
   text-align: center;
 `;
 
-const Service = styled(Box)`
+const Service = styled.div`
   padding: 20px;
   flex-direction: column;
   width: 100%;
   flex: 1;
   height: 100%;
   text-align: center;
-  transition: all .3s;
+  transition: all 0.3s;
   box-shadow: 0px 0px 5px 1px #888888;
-
 
   &:first-child {
     margin-bottom: 20px;
@@ -82,7 +81,7 @@ const Text = styled(H2)`
 `;
 
 // TODO: make it just for ContactBtn
-const ApplicBtn = styled(Box)`
+const ApplicBtn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -191,26 +190,32 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
       <Description>
         <Title>IT Решения для вашего Бизнеса</Title>
         <CenterAligned>
-          <DescriptionAction>
-            <Icon color={'blue'} inverted size="huge" name="comments" />
+          <DescriptionAction data-aos="fade-right" data-aos-duration="800">
+            <Icon color={"blue"} inverted size="huge" name="comments" />
             <DescriptionText>Обсуждаем проект</DescriptionText>
           </DescriptionAction>
-          <DescriptionAction>
+          <DescriptionAction data-aos="fade-right" data-aos-duration="800">
             <Icon color="violet" inverted size="huge" name="pencil alternate" />
             <DescriptionText>Делаем дизайн</DescriptionText>
           </DescriptionAction>
-          <DescriptionAction>
+          <DescriptionAction data-aos="fade-left" data-aos-duration="800">
             <Icon color="olive" inverted size="huge" name="cogs" />
             <DescriptionText>Разрабатываем</DescriptionText>
           </DescriptionAction>
-          <DescriptionAction>
+          <DescriptionAction data-aos="fade-left" data-aos-duration="800">
             <Icon color="red" inverted size="huge" name="rocket" />
             <DescriptionText>Запускаем</DescriptionText>
           </DescriptionAction>
         </CenterAligned>
       </Description>
       <BgImage>
-        <Image alt="space" priority objectFit={"cover"} layout="fill" src="/main.webp" />
+        <Image
+          alt="space"
+          priority
+          objectFit={"cover"}
+          layout="fill"
+          src="/main.webp"
+        />
       </BgImage>
     </Main>
 
@@ -219,7 +224,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
     </div>
     <FeaturesList>
       <ServiceWrapper>
-        <Service>
+        <Service data-aos="fade-down" data-aos-duration="800">
           <ServiceTitle>Мобильные приложения</ServiceTitle>
           <Image
             alt="smartphone"
@@ -231,7 +236,9 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
             Cоздаем приложения для всех платформ: Android, iOS, AppGallery​
           </Text>
         </Service>
-        <Service>
+        <Service 
+          data-aos="fade-down" data-aos-duration="800"
+        >
           <ServiceTitle>Интернет Магазины</ServiceTitle>
           <Image
             alt="store"
@@ -248,7 +255,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
     </FeaturesList>
     <FeaturesList>
       <ServiceWrapper>
-        <Service>
+        <Service data-aos="fade-up" data-aos-duration="800">
           <ServiceTitle>WEB - ПРИЛОЖЕНИЯ​</ServiceTitle>
           <Image
             alt="web"
@@ -260,7 +267,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
             Делаем административные панели, интегрируем сторонние сервисы.​​
           </Text>
         </Service>
-        <Service>
+        <Service data-aos="fade-up" data-aos-duration="800">
           <ServiceTitle>LANDING-PAGES​</ServiceTitle>
           <Image
             alt="landing"
@@ -274,7 +281,7 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
         </Service>
       </ServiceWrapper>
     </FeaturesList>
-    <ApplicBtn>
+    <ApplicBtn data-aos="zoom-in" data-aos-duration="800">
       <ContactBtn onRequestBtnClick={onRequestBtnClick} size={"huge"} />
     </ApplicBtn>
   </Wrapper>

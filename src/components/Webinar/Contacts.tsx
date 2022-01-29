@@ -49,6 +49,7 @@ const WhatsappBtn = styled.a`
 export const Contacts = ({ scrollRef }) => {
   return (
     <Wrapper id="contacts" ref={scrollRef}>
+      <div data-aos="zoom-in-right" data-duration="800">
       <Title>Контакты</Title>
       <ListIcons>
         <ListItem>
@@ -69,6 +70,8 @@ export const Contacts = ({ scrollRef }) => {
           </Link>
         </ListItem>
       </ListIcons>
+      </div>
+
     </Wrapper>
   );
 };

@@ -35,7 +35,7 @@ const Link = styled(List.Item)`
 `;
 
 const HeaderLinks = styled(Box)`
-  margin: 15px 0 0 auto;
+  margin: 0 0 0 auto;
   display: none;
   flex-direction: row;
   z-index: 9999;
