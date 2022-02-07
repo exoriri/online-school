@@ -138,6 +138,7 @@ const ServiceWrapper = styled.div`
 `;
 
 const Main = styled.div`
+  position: relative;
   height: 600px;
   width: 100%;
   display: flex;
@@ -186,42 +187,8 @@ const CenterAligned = styled.div`
 
 export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
   <Wrapper>
-    <Main id="services">
-      <Description>
-        <Title>IT Решения для вашего Бизнеса</Title>
-        <CenterAligned>
-          <DescriptionAction data-aos="fade-right" data-aos-duration="800">
-            <Icon color={"blue"} inverted size="huge" name="comments" />
-            <DescriptionText>Обсуждаем проект</DescriptionText>
-          </DescriptionAction>
-          <DescriptionAction data-aos="fade-right" data-aos-duration="800">
-            <Icon color="violet" inverted size="huge" name="pencil alternate" />
-            <DescriptionText>Делаем дизайн</DescriptionText>
-          </DescriptionAction>
-          <DescriptionAction data-aos="fade-left" data-aos-duration="800">
-            <Icon color="olive" inverted size="huge" name="cogs" />
-            <DescriptionText>Разрабатываем</DescriptionText>
-          </DescriptionAction>
-          <DescriptionAction data-aos="fade-left" data-aos-duration="800">
-            <Icon color="red" inverted size="huge" name="rocket" />
-            <DescriptionText>Запускаем</DescriptionText>
-          </DescriptionAction>
-        </CenterAligned>
-      </Description>
-      <BgImage>
-        <Image
-          alt="space"
-          priority
-          objectFit={"cover"}
-          layout="fill"
-          src="/main.webp"
-        />
-      </BgImage>
-    </Main>
-
     <div ref={scrollRef}>
       <Cover text="Мы делаем" />
-    </div>
     <FeaturesList>
       <ServiceWrapper>
         <Service data-aos="fade-up" data-aos-duration="800">
@@ -284,5 +251,38 @@ export const WebinarDescription = ({ onRequestBtnClick, scrollRef }) => (
     <ApplicBtn data-aos="zoom-in" data-aos-duration="800">
       <ContactBtn onRequestBtnClick={onRequestBtnClick} size={"huge"} />
     </ApplicBtn>
+    </div>
+    <Main id="services">
+      <Description>
+        <Title>IT Решения для вашего Бизнеса</Title>
+        <CenterAligned>
+          <DescriptionAction data-aos="fade-right" data-aos-duration="800">
+            <Icon color={"blue"} inverted size="huge" name="comments" />
+            <DescriptionText>Обсуждаем проект</DescriptionText>
+          </DescriptionAction>
+          <DescriptionAction data-aos="fade-right" data-aos-duration="800">
+            <Icon color="violet" inverted size="huge" name="pencil alternate" />
+            <DescriptionText>Делаем дизайн</DescriptionText>
+          </DescriptionAction>
+          <DescriptionAction data-aos="fade-left" data-aos-duration="800">
+            <Icon color="olive" inverted size="huge" name="cogs" />
+            <DescriptionText>Разрабатываем</DescriptionText>
+          </DescriptionAction>
+          <DescriptionAction data-aos="fade-left" data-aos-duration="800">
+            <Icon color="red" inverted size="huge" name="rocket" />
+            <DescriptionText>Запускаем</DescriptionText>
+          </DescriptionAction>
+        </CenterAligned>
+      </Description>
+      <BgImage>
+        <Image
+          alt="space"
+          priority
+          objectFit={"cover"}
+          layout="fill"
+          src="/main.webp"
+        />
+      </BgImage>
+    </Main>
   </Wrapper>
 );
