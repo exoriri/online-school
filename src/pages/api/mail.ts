@@ -8,8 +8,8 @@ async function main(name, number, description) {
     port: 465,
     service: "Gmail",
     auth: {
-      user: "romchikacc@gmail.com",
-      pass: "izmmbwvynbbbqgle",
+      user: "<>",
+      pass: "<>",
     }
   });
 
